@@ -47,6 +47,34 @@
         },
         "businessInterests": null,
         "sources": []
+      },
+      {
+        "name": "Ganga Dahal",
+        "relationship": "daughter",
+        "age": null,
+        "photo": null,
+        "education": null,
+        "lifestyle": {
+          "luxuryItems": Birkin Bag,
+          "recentSplurges": null,
+          "socialMedia": null
+        },
+        "businessInterests": null,
+        "sources": []
+      },
+      {
+        "name": "Prakash Man Dahal",
+        "relationship": "son",
+        "age": null,
+        "photo": null,
+        "education": null,
+        "lifestyle": {
+          "luxuryItems": Guns,
+          "recentSplurges": null,
+          "socialMedia": null
+        },
+        "businessInterests": null,
+        "sources": []
       }
     ],
     "lastUpdated": "2025-07",
