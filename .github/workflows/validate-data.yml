@@ -66,11 +66,10 @@ jobs:
           const fs = require('fs');
           const data = JSON.parse(fs.readFileSync('public/data/politicians.json', 'utf8'));
           
-          // Check if all politicians have children
+          // Check if all politicians have children (optional - politicians can have no children)
           const politiciansWithoutChildren = data.filter(p => !p.children || p.children.length === 0);
           if (politiciansWithoutChildren.length > 0) {
-            console.log('❌ Politicians without children:', politiciansWithoutChildren.map(p => p.name));
-            process.exit(1);
+            console.log('ℹ️  Politicians without children (this is allowed):', politiciansWithoutChildren.map(p => p.name));
           }
           
           // Check if all children have required fields

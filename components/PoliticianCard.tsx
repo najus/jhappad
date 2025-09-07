@@ -11,6 +11,7 @@ interface PoliticianCardProps {
 
 export default function PoliticianCard({ politician }: PoliticianCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [showAllAllegations, setShowAllAllegations] = useState(false)
 
   return (
     <div className="card hover:shadow-lg transition-shadow">
@@ -55,15 +56,21 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-red-600 mb-2">Corruption Allegations:</h4>
           <div className="space-y-1">
-            {politician.corruptionAllegations.slice(0, 2).map((allegation, index) => (
+            {(showAllAllegations ? politician.corruptionAllegations : politician.corruptionAllegations.slice(0, 2)).map((allegation, index) => (
               <p key={index} className="text-sm text-gray-700 bg-red-50 p-2 rounded">
                 {allegation}
               </p>
             ))}
             {politician.corruptionAllegations.length > 2 && (
-              <p className="text-xs text-gray-500">
-                +{politician.corruptionAllegations.length - 2} more allegations
-              </p>
+              <button
+                onClick={() => setShowAllAllegations(!showAllAllegations)}
+                className="text-xs text-nepal-red hover:text-red-800 font-medium cursor-pointer transition-colors bg-red-50 hover:bg-red-100 px-2 py-1 rounded border border-red-200"
+              >
+                {showAllAllegations 
+                  ? "Show less" 
+                  : `+${politician.corruptionAllegations.length - 2} more allegations (click to expand)`
+                }
+              </button>
             )}
           </div>
         </div>

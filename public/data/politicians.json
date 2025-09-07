@@ -21,11 +21,48 @@
     ]
   },
   {
+    "id": "politician-004",
+    "name": "Pushpa Kamal Dahal ('Prachanda')",
+    "position": "Former Prime Minister of Nepal (three terms), current Leader of the Opposition",
+    "party": "CPN (Maoist Centre)",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/8/88/Prime_Minister_of_Nepal_Pushpa_Kamal_Dahal_%22Prachanda%22.jpg",
+    "estimatedWealth": "Not publicly disclosed",
+    "corruptionAllegations": [
+      "Accused the incumbent government of being a protector of corruption and targeting honest opponents. ([Ratopati, Feb 2025])",
+      "Warned of street protests if the government continued unabated corruption. ([HimalPress, Jul 2025])",
+      "Said corruption files are being closed and money laundering is rising, undermining anti-graft efforts. ([Lagani News, Jul 2025])",
+      "Promised to reopen corruption cases and expose middlemen if he returns to power. ([Nepal Views, Feb 2025])"
+    ],
+    "children": [
+      {
+        "name": "Renu Dahal",
+        "relationship": "daughter",
+        "age": null,
+        "photo": null,
+        "education": null,
+        "lifestyle": {
+          "luxuryItems": null,
+          "recentSplurges": null,
+          "socialMedia": null
+        },
+        "businessInterests": null,
+        "sources": []
+      }
+    ],
+    "lastUpdated": "2025-07",
+    "sources": [
+      "Prachanda accuses government of protecting corruption. ([Ratopati, Feb 2025])",
+      "Dahal warns of street protest against corruption. ([HimalPress, Jul 2025])",
+      "Corruption files being closed; money laundering rising. ([Lagani News, Jul 2025])",
+      "Promises to reopen corruption files and challenge middlemen. ([Nepal Views, Feb 2025])"
+    ]
+  },
+  {
     "id": "politician-002",
     "name": "Mohan Bahadur Basnet",
     "position": "Former Minister (unspecified portfolio)",
     "party": "Not specified",
-    "photo": "https://via.placeholder.com/150x150/DC143C/FFFFFF?text=MBB",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Honorable_Mohan_Bahadur_Basnet_%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%A8_%E0%A4%AC%E0%A4%B9%E0%A4%BE%E0%A4%A6%E0%A5%81%E0%A4%B0_%E0%A4%AC%E0%A4%B8%E0%A5%8D%E0%A4%A8%E0%A5%87%E0%A4%A4.jpg",
     "estimatedWealth": "N/A",
     "corruptionAllegations": [
       "Charged over the procurement of the Teramox telecom monitoring system—allegedly advanced without proper evaluation.",
