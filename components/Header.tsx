@@ -1,19 +1,25 @@
-import { Flag, Github, Info } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { Flag, Github, Menu, X } from 'lucide-react'
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
     <header className="bg-white shadow-sm border-b">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Flag className="w-8 h-8 text-nepal-red" />
+            <Flag className="w-6 h-6 sm:w-8 sm:h-8 text-nepal-red" />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Jhappad.com</h1>
-              <p className="text-sm text-gray-600">A Slap to Corruption</p>
+              <h1 className="text-lg sm:text-xl font-bold text-gray-900">Jhappad.com</h1>
+              <p className="text-xs sm:text-sm text-gray-600">A Slap to Corruption</p>
             </div>
           </div>
           
-          <nav className="flex items-center space-x-4">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-4">
             <a
               href="/"
               className="text-gray-600 hover:text-nepal-red transition-colors"
@@ -41,7 +47,54 @@ export default function Header() {
               <Github className="w-5 h-5" />
             </a>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-gray-600 hover:text-nepal-red transition-colors"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200">
+            <div className="flex flex-col space-y-3 pt-4">
+              <a
+                href="/"
+                className="text-gray-600 hover:text-nepal-red transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </a>
+              <a
+                href="/contribute"
+                className="text-gray-600 hover:text-nepal-red transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contribute
+              </a>
+              <a
+                href="/about"
+                className="text-gray-600 hover:text-nepal-red transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </a>
+              <a
+                href="https://github.com/najus/jhappad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-nepal-red transition-colors py-2 flex items-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Github className="w-5 h-5 mr-2" />
+                GitHub
+              </a>
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   )

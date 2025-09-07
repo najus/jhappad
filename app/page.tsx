@@ -68,52 +68,52 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-6 sm:py-8">
         {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
             Jhappad.com
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
             A collective <span className="text-nepal-red font-bold">SLAP</span> to corruption in Nepal. 
             We are ordinary Nepali people uniting against corrupt politicians and their children.
           </p>
           
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="card text-center">
-              <Users className="w-8 h-8 text-nepal-red mx-auto mb-2" />
-              <div className="text-2xl font-bold text-gray-900">{totalPoliticians}</div>
-              <div className="text-gray-600">Politicians Tracked</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="card text-center p-4 sm:p-6">
+              <Users className="w-6 h-6 sm:w-8 sm:h-8 text-nepal-red mx-auto mb-2" />
+              <div className="text-xl sm:text-2xl font-bold text-gray-900">{totalPoliticians}</div>
+              <div className="text-sm sm:text-base text-gray-600">Politicians Tracked</div>
             </div>
-            <div className="card text-center">
-              <Users className="w-8 h-8 text-nepal-blue mx-auto mb-2" />
-              <div className="text-2xl font-bold text-gray-900">{totalChildren}</div>
-              <div className="text-gray-600">Children Documented</div>
+            <div className="card text-center p-4 sm:p-6">
+              <Users className="w-6 h-6 sm:w-8 sm:h-8 text-nepal-blue mx-auto mb-2" />
+              <div className="text-xl sm:text-2xl font-bold text-gray-900">{totalChildren}</div>
+              <div className="text-sm sm:text-base text-gray-600">Children Documented</div>
             </div>
-            <div className="card text-center">
-              <DollarSign className="w-8 h-8 text-green-600 mx-auto mb-2" />
-              <div className="text-2xl font-bold text-gray-900">∞</div>
-              <div className="text-gray-600">Wealth Exposed</div>
+            <div className="card text-center p-4 sm:p-6">
+              <DollarSign className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mx-auto mb-2" />
+              <div className="text-xl sm:text-2xl font-bold text-gray-900">∞</div>
+              <div className="text-sm sm:text-base text-gray-600">Wealth Exposed</div>
             </div>
           </div>
         </div>
 
         {/* Search */}
-        <div className="mb-8">
-          <div className="relative max-w-md mx-auto">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+        <div className="mb-6 sm:mb-8">
+          <div className="relative max-w-md mx-auto px-4">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
             <input
               type="text"
-              placeholder="Search politicians, parties, positions, or corruption types..."
+              placeholder="Search politicians, parties, positions..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-nepal-red focus:border-transparent"
+              className="w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-nepal-red focus:border-transparent"
             />
           </div>
           {searchTerm && (
             <div className="text-center mt-2">
-              <p className="text-sm text-gray-600">
+              <p className="text-xs sm:text-sm text-gray-600">
                 Found {filteredPoliticians.length} of {politicians.length} politicians
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {filteredPoliticians.map((politician) => (
               <PoliticianCard key={politician.id} politician={politician} />
             ))}
@@ -148,19 +148,19 @@ export default function Home() {
         )}
 
         {!loading && politicians.length > 0 && filteredPoliticians.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-gray-400 text-4xl mb-4">🔍</div>
-            <p className="text-gray-600 text-lg mb-2">No politicians found matching your search</p>
-            <p className="text-sm text-gray-500">Try searching for:</p>
-            <div className="mt-2 space-x-2">
-              <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">politician name</span>
-              <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">party name</span>
-              <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">position</span>
-              <span className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">corruption type</span>
+          <div className="text-center py-8 sm:py-12 px-4">
+            <div className="text-gray-400 text-3xl sm:text-4xl mb-4">🔍</div>
+            <p className="text-gray-600 text-base sm:text-lg mb-2">No politicians found matching your search</p>
+            <p className="text-xs sm:text-sm text-gray-500">Try searching for:</p>
+            <div className="mt-2 flex flex-wrap justify-center gap-2">
+              <span className="inline-block bg-gray-100 text-gray-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">politician name</span>
+              <span className="inline-block bg-gray-100 text-gray-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">party name</span>
+              <span className="inline-block bg-gray-100 text-gray-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">position</span>
+              <span className="inline-block bg-gray-100 text-gray-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">corruption type</span>
             </div>
             <button 
               onClick={() => setSearchTerm('')} 
-              className="mt-4 btn-secondary"
+              className="mt-4 btn-secondary text-sm sm:text-base"
             >
               Clear Search
             </button>
@@ -168,30 +168,30 @@ export default function Home() {
         )}
 
         {/* Contribution CTA */}
-        <div className="mt-16 text-center">
-          <div className="card max-w-2xl mx-auto">
-            <Github className="w-12 h-12 text-gray-600 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="mt-12 sm:mt-16 text-center px-4">
+          <div className="card max-w-2xl mx-auto p-4 sm:p-6">
+            <Github className="w-10 h-10 sm:w-12 sm:h-12 text-gray-600 mx-auto mb-4" />
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
               Join the JHAPPAD Movement
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
               This platform is open source and community-driven. Help us deliver the biggest 
               <span className="text-nepal-red font-bold"> SLAP</span> to corruption by contributing 
               information about corrupt politicians and their children.
             </p>
-            <div className="space-x-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href="https://github.com/najus/jhappad"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center"
+                className="btn-primary inline-flex items-center justify-center text-sm sm:text-base"
               >
                 <Github className="w-4 h-4 mr-2" />
                 Contribute on GitHub
               </a>
               <a
                 href="/contribute"
-                className="btn-secondary inline-flex items-center"
+                className="btn-secondary inline-flex items-center justify-center text-sm sm:text-base"
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
                 How to Contribute
