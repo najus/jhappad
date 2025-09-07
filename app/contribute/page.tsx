@@ -158,10 +158,10 @@ export default function Contribute() {
               <div className="border-l-4 border-nepal-red pl-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 1: Fork the Repository</h3>
                 <p className="text-gray-700 mb-2">
-                  Go to <a href="https://github.com/your-username/corrupt-nepali" className="text-nepal-red hover:underline">our GitHub repository</a> and click the "Fork" button.
+                  Go to <a href="https://github.com/najus/jhappad" className="text-nepal-red hover:underline">our GitHub repository</a> and click the "Fork" button.
                 </p>
                 <div className="bg-gray-100 p-3 rounded text-sm font-mono">
-                  git clone https://github.com/YOUR-USERNAME/corrupt-nepali.git
+                  git clone https://github.com/najus/jhappad.git
                 </div>
               </div>
               
@@ -263,7 +263,7 @@ export default function Contribute() {
             </p>
             <div className="space-x-4">
               <a
-                href="https://github.com/your-username/corrupt-nepali"
+                href="https://github.com/najus/jhappad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-nepal-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center"

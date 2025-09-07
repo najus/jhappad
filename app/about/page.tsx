@@ -203,7 +203,7 @@ export default function About() {
                 Contribute Information
               </a>
               <a
-                href="https://github.com/your-username/corrupt-nepali"
+                href="https://github.com/najus/jhappad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-nepal-red transition-colors inline-block"

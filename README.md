@@ -140,8 +140,8 @@ All pull requests will be reviewed for:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/corrupt-nepali.git
-cd corrupt-nepali
+git clone https://github.com/najus/jhappad.git
+cd jhappad
 
 # Install dependencies
 npm install
@@ -163,7 +163,7 @@ npm start
 ## 📁 Project Structure
 
 ```
-corrupt-nepali/
+jhappad/
 ├── app/                    # Next.js app directory
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout

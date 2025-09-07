@@ -181,7 +181,7 @@ export default function Home() {
             </p>
             <div className="space-x-4">
               <a
-                href="https://github.com/your-username/corrupt-nepali"
+                href="https://github.com/najus/jhappad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center"

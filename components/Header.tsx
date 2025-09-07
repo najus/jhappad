@@ -33,7 +33,7 @@ export default function Header() {
               About
             </a>
             <a
-              href="https://github.com/your-username/corrupt-nepali"
+              href="https://github.com/najus/jhappad"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-nepal-red transition-colors"

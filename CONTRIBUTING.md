@@ -11,8 +11,8 @@ Thank you for your interest in contributing to this transparency initiative! Thi
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/corrupt-nepali.git
-   cd corrupt-nepali
+   git clone https://github.com/najus/jhappad.git
+   cd jhappad
    ```
 3. **Create a new branch**:
    ```bash
