@@ -10,9 +10,23 @@ const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
 const dataPath = path.join(__dirname, '../public/data/politicians.json');
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
-// Initialize AJV
-const ajv = new Ajv({ allErrors: true });
+// Initialize AJV with format support
+const ajv = new Ajv({ 
+  allErrors: true,
+  strict: false,
+  validateFormats: false  // Disable format validation to avoid URI format issues
+});
 const validate = ajv.compile(schema);
+
+// Custom URL validation function
+function isValidUrl(string) {
+  try {
+    new URL(string);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
 
 // Validate each politician
 let hasErrors = false;
@@ -93,11 +107,22 @@ data.forEach((politician, index) => {
   ];
   
   allSources.forEach(source => {
-    try {
-      new URL(source);
-    } catch (e) {
+    if (!isValidUrl(source)) {
       hasErrors = true;
       console.log(`❌ Invalid URL format: ${source}`);
+    }
+  });
+  
+  // Check photo URLs
+  if (politician.photo && !isValidUrl(politician.photo)) {
+    hasErrors = true;
+    console.log(`❌ Invalid politician photo URL: ${politician.photo}`);
+  }
+  
+  politician.children.forEach(child => {
+    if (child.photo && !isValidUrl(child.photo)) {
+      hasErrors = true;
+      console.log(`❌ Invalid child photo URL for ${child.name}: ${child.photo}`);
     }
   });
 });

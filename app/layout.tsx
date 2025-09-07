@@ -6,12 +6,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Jhappad.com - A Slap to Corruption in Nepal',
-  description: 'A collective slap to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children.',
+  description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children who spend taxpayers’ money on their personal luxuries',
   keywords: ['nepal', 'corruption', 'transparency', 'accountability', 'politics', 'jhappad', 'slap'],
   authors: [{ name: 'Jhappad.com Contributors' }],
   openGraph: {
     title: 'Jhappad.com - A Slap to Corruption in Nepal',
-    description: 'A collective slap to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children.',
+    description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children who spend taxpayers’ money on their personal luxuries',
     type: 'website',
   },
 }
