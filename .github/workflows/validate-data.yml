@@ -1,0 +1,115 @@
+name: Validate Data
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'public/data/**'
+      - 'schema/**'
+      - 'scripts/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'public/data/**'
+      - 'schema/**'
+      - 'scripts/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Validate JSON schema
+      run: |
+        echo "🔍 Validating JSON schema..."
+        node -e "
+          const fs = require('fs');
+          const schema = JSON.parse(fs.readFileSync('schema/politician-schema.json', 'utf8'));
+          console.log('✅ Schema is valid JSON');
+          console.log('📋 Schema properties:', Object.keys(schema.properties).join(', '));
+        "
+        
+    - name: Validate politician data
+      run: npm run validate-data
+      
+    - name: Check for duplicate IDs
+      run: |
+        echo "🔍 Checking for duplicate politician IDs..."
+        node -e "
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('public/data/politicians.json', 'utf8'));
+          const ids = data.map(p => p.id);
+          const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
+          if (duplicates.length > 0) {
+            console.log('❌ Duplicate IDs found:', duplicates);
+            process.exit(1);
+          }
+          console.log('✅ No duplicate IDs found');
+        "
+        
+    - name: Check data integrity
+      run: |
+        echo "🔍 Checking data integrity..."
+        node -e "
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('public/data/politicians.json', 'utf8'));
+          
+          // Check if all politicians have children
+          const politiciansWithoutChildren = data.filter(p => !p.children || p.children.length === 0);
+          if (politiciansWithoutChildren.length > 0) {
+            console.log('❌ Politicians without children:', politiciansWithoutChildren.map(p => p.name));
+            process.exit(1);
+          }
+          
+          // Check if all children have required fields
+          data.forEach(politician => {
+            politician.children.forEach((child, index) => {
+              if (!child.name || !child.relationship || child.age === undefined) {
+                console.log(\`❌ Child \${index + 1} of \${politician.name} missing required fields\`);
+                process.exit(1);
+              }
+            });
+          });
+          
+          console.log('✅ Data integrity checks passed');
+        "
+        
+    - name: Build application
+      run: npm run build
+      
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('public/data/politicians.json', 'utf8'));
+          const totalPoliticians = data.length;
+          const totalChildren = data.reduce((sum, p) => sum + p.children.length, 0);
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: \`## ✅ Data Validation Passed
+            
+            - **Politicians tracked**: \${totalPoliticians}
+            - **Children documented**: \${totalChildren}
+            - **Schema validation**: ✅ Passed
+            - **Data integrity**: ✅ Passed
+            - **Build**: ✅ Successful
+            
+            Your contribution looks good! The data has been validated and the application builds successfully.\`
+          });

@@ -1,0 +1,35 @@
+{
+  "name": "jhappad-com",
+  "version": "1.0.0",
+  "description": "Jhappad.com - A collective slap to corruption in Nepal",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "validate-data": "node scripts/validate-data.js"
+  },
+  "keywords": ["nepal", "corruption", "transparency", "accountability", "jhappad", "slap"],
+  "author": "Jhappad.com Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "lucide-react": "0.400.0",
+    "clsx": "2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.5",
+    "typescript": "5.5.3",
+    "tailwindcss": "3.4.4",
+    "autoprefixer": "10.4.19",
+    "postcss": "8.4.39",
+    "ajv": "8.12.0"
+  }
+}

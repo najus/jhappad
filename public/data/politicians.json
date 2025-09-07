@@ -1,0 +1,59 @@
+[
+  {
+    "id": "politician-001",
+    "name": "Madhav Kumar Nepal",
+    "position": "Former Prime Minister (2009–2011), Chairman of United Socialist Party",
+    "party": "CPN (Unified Socialist)",
+    "photo": "https://via.placeholder.com/150x150/DC143C/FFFFFF?text=MKN",
+    "estimatedWealth": "N/A",
+    "corruptionAllegations": [
+      "Approved land acquisition exceeding legal limits for Patanjali Yogpeeth Nepal in Kavrepalanchok.",
+      "Allowed resale/swapping of land at inflated prices, reportedly causing a state loss of NPR 185 million.",
+      "First former Prime Minister formally charged by Nepal’s CIAA for corruption.",
+      "Also previously linked to the Lalita Niwas land-grab investigation involving land brokers and political collusion."
+    ],
+    "children": [],
+    "lastUpdated": "2025-06-05",
+    "sources": [
+      "CIAA filed case against Madhav Kumar Nepal and others in Patanjali land scandal; fine NPR 185M and possible 17-year sentence.  [oai_citation:0‡Reuters](https://www.reuters.com/world/asia-pacific/nepal-ex-pm-faces-graft-charge-over-land-deal-with-indian-yoga-gurus-firm-2025-06-06/?utm_source=chatgpt.com) [oai_citation:1‡Wikipedia](https://en.wikipedia.org/wiki/Madhav_Kumar_Nepal?utm_source=chatgpt.com)",
+      "Case marks first time a former Prime Minister is officially indicted by CIAA.  [oai_citation:2‡myRepublica](https://www.myrepublica.nagariknetwork.com/news/madhav-nepal-becomes-first-former-pm-to-be-indicted-by-ciaa-for-corruption-69-61.html?utm_source=chatgpt.com)",
+      "Earlier mention of Lalita Niwas land grab involving ex-PMs including Nepal.  [oai_citation:3‡Wikipedia](https://en.wikipedia.org/wiki/Lalita_Niwas_land_grab_scam?utm_source=chatgpt.com) [oai_citation:4‡Asiana Times](https://asianatimes.com/former-pms-under-scrutiny-nepal-land-grab-probe/?utm_source=chatgpt.com)"
+    ]
+  },
+  {
+    "id": "politician-002",
+    "name": "Mohan Bahadur Basnet",
+    "position": "Former Minister (unspecified portfolio)",
+    "party": "Not specified",
+    "photo": "https://via.placeholder.com/150x150/DC143C/FFFFFF?text=MBB",
+    "estimatedWealth": "N/A",
+    "corruptionAllegations": [
+      "Charged over the procurement of the Teramox telecom monitoring system—allegedly advanced without proper evaluation.",
+      "Accused of causing financial loss of NPR 3.22 billion to the state.",
+      "Suspended from Parliament following charges; granted bail (NPR 2.5 million)."
+    ],
+    "children": [],
+    "lastUpdated": "2025-05–06",
+    "sources": [
+      "CIAA filed corruption charges over Teramox procurement causing loss of Rs 3.22 billion; Basnet suspended from Parliament.  [oai_citation:5‡Wikipedia](https://en.wikipedia.org/wiki/Mohan_Bahadur_Basnet?utm_source=chatgpt.com)"
+    ]
+  },
+  {
+    "id": "politician-003",
+    "name": "Dev Kumar Nepali",
+    "position": "Former Mayor of Dhorpatan Municipality",
+    "party": "CPN–UML (formerly CPN (Maoist Centre))",
+    "photo": "https://via.placeholder.com/150x150/DC143C/FFFFFF?text=DKN",
+    "estimatedWealth": "N/A",
+    "corruptionAllegations": [
+      "Founder and chairman of Image Savings and Credit Cooperative; accused of embezzling over NPR 2.25 billion from thousands of depositors.",
+      "Issued an international arrest warrant (Interpol Red Notice); arrested in New Delhi and extradited to Nepal in 2024.",
+      "Allegedly enjoyed initial political protection, delaying arrest."
+    ],
+    "children": [],
+    "lastUpdated": "2025-04",
+    "sources": [
+      "Embezzlement of over NPR 2.25 billion from depositors via cooperative; Interpol Red Corner Notice and extradition.  [oai_citation:6‡Wikipedia](https://en.wikipedia.org/wiki/Cooperative_scandal_in_Nepal?utm_source=chatgpt.com)"
+    ]
+  }
+]

@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Nepali Politician Data Schema",
+  "description": "Schema for tracking corrupt Nepali politicians and their children",
+  "required": ["id", "name", "position", "party", "children"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the politician"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name of the politician"
+    },
+    "position": {
+      "type": "string",
+      "description": "Current or previous political position"
+    },
+    "party": {
+      "type": "string",
+      "description": "Political party affiliation"
+    },
+    "photo": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to politician's photo"
+    },
+    "estimatedWealth": {
+      "type": "string",
+      "description": "Estimated wealth in NPR or USD"
+    },
+    "corruptionAllegations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of corruption allegations"
+    },
+    "children": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/child"
+      },
+      "description": "List of politician's children"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when this record was last updated"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "Sources for the information provided"
+    }
+  },
+  "definitions": {
+    "child": {
+      "type": "object",
+      "required": ["name", "relationship", "age"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the child"
+        },
+        "relationship": {
+          "type": "string",
+          "enum": ["son", "daughter", "adopted_son", "adopted_daughter"],
+          "description": "Relationship to the politician"
+        },
+        "age": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 120,
+          "description": "Age of the child"
+        },
+        "photo": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to child's photo"
+        },
+        "education": {
+          "type": "object",
+          "properties": {
+            "institution": {
+              "type": "string",
+              "description": "Educational institution name"
+            },
+            "degree": {
+              "type": "string",
+              "description": "Degree or qualification"
+            },
+            "country": {
+              "type": "string",
+              "description": "Country where education was obtained"
+            },
+            "cost": {
+              "type": "string",
+              "description": "Estimated cost of education"
+            }
+          }
+        },
+        "lifestyle": {
+          "type": "object",
+          "properties": {
+            "luxuryItems": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of luxury items owned"
+            },
+            "recentSplurges": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "item": {
+                    "type": "string"
+                  },
+                  "cost": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "source": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              },
+              "description": "Recent expensive purchases"
+            },
+            "socialMedia": {
+              "type": "object",
+              "properties": {
+                "instagram": {
+                  "type": "string"
+                },
+                "facebook": {
+                  "type": "string"
+                },
+                "tiktok": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "businessInterests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "company": {
+                "type": "string"
+              },
+              "position": {
+                "type": "string"
+              },
+              "ownership": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Business interests and ownership"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Sources for the information provided"
+        }
+      }
+    }
+  }
+}
