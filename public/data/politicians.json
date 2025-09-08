@@ -55,7 +55,7 @@
         "photo": null,
         "education": null,
         "lifestyle": {
-          "luxuryItems": "Birkin Bag",
+          "luxuryItems": ["Birkin Bag"],
           "recentSplurges": null,
           "socialMedia": null
         },
@@ -69,7 +69,7 @@
         "photo": null,
         "education": null,
         "lifestyle": {
-          "luxuryItems": "Guns",
+          "luxuryItems": ["Guns"],
           "recentSplurges": null,
           "socialMedia": null
         },
