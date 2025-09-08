@@ -2,20 +2,23 @@
 
 import { useState } from 'react'
 import { Flag, Github, Menu, X } from 'lucide-react'
+import LanguageSwitcher from './LanguageSwitcher'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   return (
-    <header className="bg-white shadow-sm border-b">
-      <div className="container mx-auto px-4 py-4">
+    <header className="bg-white shadow-sm border-b sticky top-0 z-40">
+      <div className="container-responsive py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <Flag className="w-6 h-6 sm:w-8 sm:h-8 text-nepal-red" />
             <a href="/" className="hover:opacity-80 transition-opacity">
               <div>
-              <h1 className="text-lg sm:text-xl font-bold text-gray-900">Jhappad.com</h1>
-                <p className="text-xs sm:text-sm text-gray-600">A Slap to Corruption</p>
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-900">{t('home.title')}</h1>
+                <p className="text-sm text-gray-600">{t('home.subtitle')}</p>
               </div>
             </a>
           </div>
@@ -26,33 +29,35 @@ export default function Header() {
               href="/"
               className="text-gray-600 hover:text-nepal-red transition-colors"
             >
-              Home
+              {t('nav.home')}
             </a>
             <a
               href="https://forms.gle/w7jEJtD2HSrgDNcw5"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-nepal-red text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-red-700 transition-colors"
+              className="bg-nepal-red text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-700 transition-colors btn-touch"
             >
-              📝 Report Corruption
+              📝 {t('nav.report')}
             </a>
             <a
               href="/contribute"
               className="text-gray-600 hover:text-nepal-red transition-colors"
             >
-              Contribute
+              {t('nav.contribute')}
             </a>
             <a
               href="/about"
               className="text-gray-600 hover:text-nepal-red transition-colors"
             >
-              About
+              {t('nav.about')}
             </a>
+            <LanguageSwitcher />
             <a
               href="https://github.com/najus/jhappad"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-nepal-red transition-colors"
+              title={t('nav.github')}
             >
               <Github className="w-5 h-5" />
             </a>
@@ -76,7 +81,7 @@ export default function Header() {
                 className="text-gray-600 hover:text-nepal-red transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Home
+                {t('nav.home')}
               </a>
               <a
                 href="https://forms.gle/w7jEJtD2HSrgDNcw5"
@@ -85,22 +90,25 @@ export default function Header() {
                 className="bg-nepal-red text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                📝 Report Corruption
+                📝 {t('nav.report')}
               </a>
               <a
                 href="/contribute"
                 className="text-gray-600 hover:text-nepal-red transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Technical Contribution Guide
+                {t('nav.contribute')}
               </a>
               <a
                 href="/about"
                 className="text-gray-600 hover:text-nepal-red transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                {t('nav.about')}
               </a>
+              <div className="py-2">
+                <LanguageSwitcher />
+              </div>
               <a
                 href="https://github.com/najus/jhappad"
                 target="_blank"
@@ -109,7 +117,7 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Github className="w-5 h-5 mr-2" />
-                GitHub
+                {t('nav.github')}
               </a>
             </div>
           </nav>

@@ -2,6 +2,7 @@
 
 import { Flag, Users, Shield, Heart, Target, Globe } from 'lucide-react'
 import Header from '@/components/Header'
+import SocialShare from '@/components/SocialShare'
 
 export default function About() {
   return (
@@ -217,6 +218,9 @@ export default function About() {
           </div>
         </div>
       </main>
+      
+      {/* Floating Share Button */}
+      <SocialShare variant="floating" />
     </div>
   )
 }

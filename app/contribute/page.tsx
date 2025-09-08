@@ -2,6 +2,7 @@
 
 import { Github, FileText, Users, CheckCircle, AlertCircle, ExternalLink, Upload, Search } from 'lucide-react'
 import Header from '@/components/Header'
+import SocialShare from '@/components/SocialShare'
 
 export default function Contribute() {
   return (
@@ -340,6 +341,9 @@ export default function Contribute() {
           </div>
         </div>
       </main>
+      
+      {/* Floating Share Button */}
+      <SocialShare variant="floating" />
     </div>
   )
 }

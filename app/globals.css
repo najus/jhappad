@@ -10,14 +10,30 @@
 
 @layer components {
   .card {
-    @apply bg-white rounded-lg shadow-md border border-gray-200 p-6;
+    @apply bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6;
   }
   
   .btn-primary {
-    @apply bg-nepal-red text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors;
+    @apply bg-nepal-red text-white px-4 py-3 rounded-md hover:bg-red-700 transition-colors font-medium text-sm sm:text-base min-h-[44px] flex items-center justify-center;
   }
   
   .btn-secondary {
-    @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-colors;
+    @apply bg-gray-200 text-gray-800 px-4 py-3 rounded-md hover:bg-gray-300 transition-colors font-medium text-sm sm:text-base min-h-[44px] flex items-center justify-center;
+  }
+  
+  .btn-touch {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  .text-responsive {
+    @apply text-sm sm:text-base;
+  }
+  
+  .heading-responsive {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+  
+  .container-responsive {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
