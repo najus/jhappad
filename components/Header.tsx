@@ -34,7 +34,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="bg-nepal-red text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-red-700 transition-colors"
             >
-              📝 Share Info
+              📝 Report Corruption
             </a>
             <a
               href="/contribute"
@@ -85,7 +85,7 @@ export default function Header() {
                 className="bg-nepal-red text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                📝 Share Corruption Info
+                📝 Report Corruption
               </a>
               <a
                 href="/contribute"

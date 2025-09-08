@@ -27,7 +27,7 @@ export default function Contribute() {
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-nepal-red to-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl"
             >
-              📝 Share Corruption Info Anonymously
+              📝 Report Corruption Info
             </a>
             <p className="text-sm text-gray-500 mt-3">
               Quick & Easy • No Technical Skills Required • 100% Anonymous

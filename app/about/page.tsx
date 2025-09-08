@@ -202,7 +202,7 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="bg-white text-nepal-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block w-full sm:w-auto"
               >
-                📝 Share Info Anonymously
+                📝 Report Corruption Anonymously
               </a>
               <a
                 href="/contribute"
@@ -212,7 +212,7 @@ export default function About() {
               </a>
             </div>
             <p className="text-sm mt-4 opacity-75">
-              Share corruption information anonymously or contribute technically - both ways help expose corruption!
+              Report corruption anonymously or contribute technically - both ways help expose corruption!
             </p>
           </div>
         </div>
