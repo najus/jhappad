@@ -18,36 +18,94 @@ export default function Contribute() {
             Help us deliver the biggest <span className="text-nepal-red font-bold">SLAP</span> to corruption 
             by contributing information about corrupt politicians and their children.
           </p>
+          
+          {/* Primary CTA - Google Form */}
+          <div className="mb-8">
+            <a
+              href="https://forms.gle/w7jEJtD2HSrgDNcw5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-nepal-red to-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl"
+            >
+              📝 Share Corruption Info Anonymously
+            </a>
+            <p className="text-sm text-gray-500 mt-3">
+              Quick & Easy • No Technical Skills Required • 100% Anonymous
+            </p>
+          </div>
         </div>
 
-        {/* Quick Start */}
+        {/* Two Ways to Contribute */}
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="card">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <Github className="w-6 h-6 text-nepal-red mr-3" />
-              Quick Start Guide
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="bg-nepal-red text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Fork & Clone</h3>
-                <p className="text-gray-600 text-sm">
-                  Fork the repository on GitHub and clone it to your local machine
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Easy Way - Google Form */}
+            <div className="card bg-gradient-to-br from-green-50 to-green-100 border-green-200">
+              <div className="text-center mb-6">
+                <div className="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  📝
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Easy Way</h2>
+                <p className="text-gray-600">For everyone - no technical skills needed</p>
               </div>
-              <div className="text-center">
-                <div className="bg-nepal-red text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Add Information</h3>
-                <p className="text-gray-600 text-sm">
-                  Add politician data to the JSON file following our schema
-                </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                  <p className="text-gray-700">Click the form button above</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                  <p className="text-gray-700">Fill out the form with corruption information</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                  <p className="text-gray-700">Submit anonymously - we'll add it to the website</p>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="bg-nepal-red text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-                <h3 className="font-semibold text-gray-900 mb-2">Submit PR</h3>
-                <p className="text-gray-600 text-sm">
-                  Create a pull request with your contribution for review
-                </p>
+              <div className="mt-6 text-center">
+                <a
+                  href="https://forms.gle/w7jEJtD2HSrgDNcw5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center"
+                >
+                  📝 Open Form
+                </a>
+              </div>
+            </div>
+
+            {/* Technical Way - GitHub */}
+            <div className="card bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
+              <div className="text-center mb-6">
+                <div className="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  <Github className="w-8 h-8" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Technical Way</h2>
+                <p className="text-gray-600">For developers and technical users</p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                  <p className="text-gray-700">Fork the repository on GitHub</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                  <p className="text-gray-700">Add politician data to the JSON file</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                  <p className="text-gray-700">Create a pull request for review</p>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <a
+                  href="https://github.com/najus/jhappad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center"
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  View on GitHub
+                </a>
               </div>
             </div>
           </div>

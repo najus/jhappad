@@ -175,26 +175,42 @@ export default function Home() {
               Join the JHAPPAD Movement
             </h2>
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
-              This platform is open source and community-driven. Help us deliver the biggest 
-              <span className="text-nepal-red font-bold"> SLAP</span> to corruption by contributing 
-              information about corrupt politicians and their children.
+              Help us deliver the biggest <span className="text-nepal-red font-bold"> SLAP</span> to corruption! 
+              Share information about corrupt politicians and their children anonymously.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            
+            {/* Primary CTA - Google Form */}
+            <div className="mb-4 sm:mb-6">
               <a
-                href="https://github.com/najus/jhappad"
+                href="https://forms.gle/w7jEJtD2HSrgDNcw5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center justify-center text-sm sm:text-base"
+                className="bg-gradient-to-r from-nepal-red to-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 inline-flex items-center justify-center text-sm sm:text-base shadow-lg hover:shadow-xl"
               >
-                <Github className="w-4 h-4 mr-2" />
-                Contribute on GitHub
+                📝 Share Corruption Info Anonymously
               </a>
+              <p className="text-xs text-gray-500 mt-2">
+                Quick & Easy • No Technical Skills Required • 100% Anonymous
+              </p>
+            </div>
+
+            {/* Secondary CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href="/contribute"
                 className="btn-secondary inline-flex items-center justify-center text-sm sm:text-base"
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
-                How to Contribute
+                Technical Contribution Guide
+              </a>
+              <a
+                href="https://github.com/najus/jhappad"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center justify-center text-sm sm:text-base"
+              >
+                <Github className="w-4 h-4 mr-2" />
+                View on GitHub
               </a>
             </div>
           </div>

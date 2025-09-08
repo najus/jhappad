@@ -195,22 +195,25 @@ export default function About() {
               Together, we can deliver the biggest <strong>JHAPPAD</strong> to corruption 
               that Nepal has ever seen. Every contribution matters.
             </p>
-            <div className="space-x-4">
+            <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
               <a
-                href="/contribute"
-                className="bg-white text-nepal-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
-              >
-                Contribute Information
-              </a>
-              <a
-                href="https://github.com/najus/jhappad"
+                href="https://forms.gle/w7jEJtD2HSrgDNcw5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-nepal-red transition-colors inline-block"
+                className="bg-white text-nepal-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block w-full sm:w-auto"
               >
-                Join on GitHub
+                📝 Share Info Anonymously
+              </a>
+              <a
+                href="/contribute"
+                className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-nepal-red transition-colors inline-block w-full sm:w-auto"
+              >
+                Technical Contribution
               </a>
             </div>
+            <p className="text-sm mt-4 opacity-75">
+              Share corruption information anonymously or contribute technically - both ways help expose corruption!
+            </p>
           </div>
         </div>
       </main>

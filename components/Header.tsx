@@ -27,6 +27,14 @@ export default function Header() {
               Home
             </a>
             <a
+              href="https://forms.gle/w7jEJtD2HSrgDNcw5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-nepal-red text-white px-3 py-1 rounded-md text-sm font-medium hover:bg-red-700 transition-colors"
+            >
+              📝 Share Info
+            </a>
+            <a
               href="/contribute"
               className="text-gray-600 hover:text-nepal-red transition-colors"
             >
@@ -69,11 +77,20 @@ export default function Header() {
                 Home
               </a>
               <a
+                href="https://forms.gle/w7jEJtD2HSrgDNcw5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-nepal-red text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                📝 Share Corruption Info
+              </a>
+              <a
                 href="/contribute"
                 className="text-gray-600 hover:text-nepal-red transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Contribute
+                Technical Contribution Guide
               </a>
               <a
                 href="/about"
