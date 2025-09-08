@@ -12,10 +12,12 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <Flag className="w-6 h-6 sm:w-8 sm:h-8 text-nepal-red" />
-            <div>
+            <a href="/" className="hover:opacity-80 transition-opacity">
+              <div>
               <h1 className="text-lg sm:text-xl font-bold text-gray-900">Jhappad.com</h1>
-              <p className="text-xs sm:text-sm text-gray-600">A Slap to Corruption</p>
-            </div>
+                <p className="text-xs sm:text-sm text-gray-600">A Slap to Corruption</p>
+              </div>
+            </a>
           </div>
           
           {/* Desktop Navigation */}
