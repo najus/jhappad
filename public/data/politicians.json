@@ -55,7 +55,7 @@
         "photo": null,
         "education": null,
         "lifestyle": {
-          "luxuryItems": Birkin Bag,
+          "luxuryItems": "Birkin Bag",
           "recentSplurges": null,
           "socialMedia": null
         },
@@ -69,20 +69,19 @@
         "photo": null,
         "education": null,
         "lifestyle": {
-          "luxuryItems": Guns,
+          "luxuryItems": "Guns",
           "recentSplurges": null,
           "socialMedia": null
         },
         "businessInterests": null,
-        "sources": []
+        "sources": ["https://thehimalayantimes.com/nepal/yes-i-possess-gun-pm-pushpa-kamal-dahal-son-prakash-dahal-writes-on-facebook"]
       }
     ],
     "lastUpdated": "2025-07",
     "sources": [
-      "Prachanda accuses government of protecting corruption. ([Ratopati, Feb 2025])",
-      "Dahal warns of street protest against corruption. ([HimalPress, Jul 2025])",
-      "Corruption files being closed; money laundering rising. ([Lagani News, Jul 2025])",
-      "Promises to reopen corruption files and challenge middlemen. ([Nepal Views, Feb 2025])"
+      "https://english.ratopati.com/story/39049",
+      "https://english.pardafas.com/prachanda-accuses-government-of-deepening-corruption-amid-national-crisis/",
+      "https://laganinews.com/en/2025/07/14/chairman-prachanda-expresses-serious-concern-over-money-laundering-corruption-probe-undermined-2/"
     ]
   },
   {
