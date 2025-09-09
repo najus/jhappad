@@ -66,25 +66,81 @@ export default function ChildCard({ child }: ChildCardProps) {
       {/* Social Media Links */}
       {child.lifestyle?.socialMedia && (
         <div className="flex space-x-2 mb-3">
-          {child.lifestyle.socialMedia.instagram && (
-            <a
-              href={child.lifestyle.socialMedia.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-600 hover:text-pink-800"
-            >
-              <Instagram className="w-4 h-4" />
-            </a>
-          )}
-          {child.lifestyle.socialMedia.facebook && (
-            <a
-              href={child.lifestyle.socialMedia.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800"
-            >
-              <Facebook className="w-4 h-4" />
-            </a>
+          {/* Handle both object format and array format */}
+          {Array.isArray(child.lifestyle.socialMedia) ? (
+            child.lifestyle.socialMedia.map((url, index) => {
+              // Determine platform based on URL
+              const isInstagram = url.includes('instagram.com')
+              const isFacebook = url.includes('facebook.com')
+              
+              if (isInstagram) {
+                return (
+                  <a
+                    key={index}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-600 hover:text-pink-800"
+                    title="Instagram"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                )
+              } else if (isFacebook) {
+                return (
+                  <a
+                    key={index}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800"
+                    title="Facebook"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                )
+              } else {
+                // Generic social media link
+                return (
+                  <a
+                    key={index}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-gray-800"
+                    title="Social Media"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )
+              }
+            })
+          ) : (
+            // Handle object format
+            <>
+              {child.lifestyle.socialMedia.instagram && (
+                <a
+                  href={child.lifestyle.socialMedia.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-600 hover:text-pink-800"
+                  title="Instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+              )}
+              {child.lifestyle.socialMedia.facebook && (
+                <a
+                  href={child.lifestyle.socialMedia.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800"
+                  title="Facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+              )}
+            </>
           )}
         </div>
       )}

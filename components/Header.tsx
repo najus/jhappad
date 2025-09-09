@@ -106,9 +106,6 @@ export default function Header() {
               >
                 {t('nav.about')}
               </a>
-              <div className="py-2">
-                <LanguageSwitcher />
-              </div>
               <a
                 href="https://github.com/najus/jhappad"
                 target="_blank"
@@ -119,6 +116,13 @@ export default function Header() {
                 <Github className="w-5 h-5 mr-2" />
                 {t('nav.github')}
               </a>
+              {/* Language Switcher - More prominent in mobile */}
+              <div className="py-2 border-t border-gray-200 mt-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-gray-700">Language / भाषा:</span>
+                  <LanguageSwitcher />
+                </div>
+              </div>
             </div>
           </nav>
         )}

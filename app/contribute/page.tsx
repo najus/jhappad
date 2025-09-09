@@ -3,8 +3,10 @@
 import { Github, FileText, Users, CheckCircle, AlertCircle, ExternalLink, Upload, Search } from 'lucide-react'
 import Header from '@/components/Header'
 import SocialShare from '@/components/SocialShare'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Contribute() {
+  const { t } = useLanguage()
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -13,11 +15,10 @@ export default function Contribute() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Contribute to Jhappad.com
+            {t('contribute.title')}
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Help us deliver the biggest <span className="text-nepal-red font-bold">SLAP</span> to corruption 
-            by contributing information about corrupt politicians and their children.
+            {t('contribute.description')}
           </p>
           
           {/* Primary CTA - Google Form */}
@@ -28,10 +29,10 @@ export default function Contribute() {
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-nepal-red to-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 inline-flex items-center justify-center text-lg shadow-lg hover:shadow-xl"
             >
-              📝 Report Corruption Info
+              📝 {t('contribute.cta.report')}
             </a>
             <p className="text-sm text-gray-500 mt-3">
-              Quick & Easy • No Technical Skills Required • 100% Anonymous
+              {t('contribute.cta.quick')}
             </p>
           </div>
         </div>
@@ -45,21 +46,21 @@ export default function Contribute() {
                 <div className="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   📝
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Easy Way</h2>
-                <p className="text-gray-600">For everyone - no technical skills needed</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('contribute.easy.title')}</h2>
+                <p className="text-gray-600">{t('contribute.easy.subtitle')}</p>
               </div>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
-                  <p className="text-gray-700">Click the form button above</p>
+                  <p className="text-gray-700">{t('contribute.easy.step1')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
-                  <p className="text-gray-700">Fill out the form with corruption information</p>
+                  <p className="text-gray-700">{t('contribute.easy.step2')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
-                  <p className="text-gray-700">Submit anonymously - we'll add it to the website</p>
+                  <p className="text-gray-700">{t('contribute.easy.step3')}</p>
                 </div>
               </div>
               <div className="mt-6 text-center">
@@ -69,7 +70,7 @@ export default function Contribute() {
                   rel="noopener noreferrer"
                   className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center"
                 >
-                  📝 Open Form
+                  📝 {t('contribute.easy.button')}
                 </a>
               </div>
             </div>
@@ -80,21 +81,21 @@ export default function Contribute() {
                 <div className="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                   <Github className="w-8 h-8" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Technical Way</h2>
-                <p className="text-gray-600">For developers and technical users</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('contribute.technical.title')}</h2>
+                <p className="text-gray-600">{t('contribute.technical.subtitle')}</p>
               </div>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
-                  <p className="text-gray-700">Fork the repository on GitHub</p>
+                  <p className="text-gray-700">{t('contribute.technical.step1')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
-                  <p className="text-gray-700">Add politician data to the JSON file</p>
+                  <p className="text-gray-700">{t('contribute.technical.step2')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
-                  <p className="text-gray-700">Create a pull request for review</p>
+                  <p className="text-gray-700">{t('contribute.technical.step3')}</p>
                 </div>
               </div>
               <div className="mt-6 text-center">
@@ -105,7 +106,7 @@ export default function Contribute() {
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center"
                 >
                   <Github className="w-4 h-4 mr-2" />
-                  View on GitHub
+                  {t('contribute.technical.button')}
                 </a>
               </div>
             </div>
@@ -117,48 +118,48 @@ export default function Contribute() {
           <div className="card">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <FileText className="w-6 h-6 text-nepal-blue mr-3" />
-              What Information to Contribute
+              {t('contribute.info.title')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Politician Information</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('contribute.info.politician')}</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Full name and current position
+                    {t('contribute.info.politician.name')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Political party affiliation
+                    {t('contribute.info.politician.party')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Corruption allegations with sources
+                    {t('contribute.info.politician.allegations')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Estimated family wealth
+                    {t('contribute.info.politician.wealth')}
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Children Information</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('contribute.info.children')}</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Name, age, and relationship
+                    {t('contribute.info.children.details')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Expensive education abroad
+                    {t('contribute.info.children.education')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Luxury items and recent purchases
+                    {t('contribute.info.children.luxury')}
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Business interests and ownership
+                    {t('contribute.info.children.business')}
                   </li>
                 </ul>
               </div>
@@ -315,10 +316,9 @@ export default function Contribute() {
         {/* Call to Action */}
         <div className="max-w-4xl mx-auto text-center">
           <div className="card bg-gradient-to-r from-nepal-red to-nepal-blue text-white">
-            <h2 className="text-2xl font-bold mb-4">Ready to Deliver a JHAPPAD?</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('contribute.cta.final.title')}</h2>
             <p className="text-lg mb-6 opacity-90">
-              Every piece of information helps us expose corruption. 
-              Join the movement and help us hold corrupt politicians accountable.
+              {t('contribute.cta.final.description')}
             </p>
             <div className="space-x-4">
               <a
@@ -328,14 +328,14 @@ export default function Contribute() {
                 className="bg-white text-nepal-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center"
               >
                 <Github className="w-5 h-5 mr-2" />
-                Start Contributing
+                {t('contribute.cta.final.start')}
               </a>
               <a
                 href="/about"
                 className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-nepal-red transition-colors inline-flex items-center"
               >
                 <ExternalLink className="w-5 h-5 mr-2" />
-                Learn More
+                {t('contribute.cta.final.learn')}
               </a>
             </div>
           </div>

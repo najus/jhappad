@@ -3,8 +3,10 @@
 import { Flag, Users, Shield, Heart, Target, Globe } from 'lucide-react'
 import Header from '@/components/Header'
 import SocialShare from '@/components/SocialShare'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function About() {
+  const { t } = useLanguage()
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -13,11 +15,10 @@ export default function About() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            About Jhappad.com
+            {t('about.title')}
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            A collective slap to corruption in Nepal. We are ordinary Nepali people 
-            uniting against the corrupt practices that plague our nation.
+            {t('home.description')}
           </p>
         </div>
 
@@ -26,18 +27,13 @@ export default function About() {
           <div className="card">
             <div className="flex items-center mb-6">
               <Target className="w-8 h-8 text-nepal-red mr-3" />
-              <h2 className="text-2xl font-bold text-gray-900">Our Mission</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('about.mission.title')}</h2>
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              <strong>Jhappad.com</strong> is more than just a website - it's a movement. 
-              We believe that when politicians' children flaunt luxury lifestyles that 
-              far exceed their family's declared income, it's time for a collective 
-              <span className="text-nepal-red font-bold"> SLAP</span> to corruption.
+              <strong>Jhappad.com</strong> {t('about.mission.description').replace('Jhappad.com is more than just a website - it\'s a movement. ', '')}
             </p>
             <p className="text-gray-700 text-lg leading-relaxed">
-              Our mission is to expose the hypocrisy of corrupt politicians by documenting 
-              their children's extravagant lifestyles, expensive education abroad, and 
-              business interests that don't add up to their declared wealth.
+              {t('about.mission.description2')}
             </p>
           </div>
         </div>
@@ -47,48 +43,48 @@ export default function About() {
           <div className="card">
             <div className="flex items-center mb-6">
               <Users className="w-8 h-8 text-nepal-blue mr-3" />
-              <h2 className="text-2xl font-bold text-gray-900">Who We Are</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('about.who.title')}</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">We are ordinary Nepali people:</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('about.who.ordinary')}</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center">
                     <Heart className="w-4 h-4 text-red-500 mr-2" />
-                    Concerned citizens tired of corruption
+                    {t('about.who.concerned')}
                   </li>
                   <li className="flex items-center">
                     <Heart className="w-4 h-4 text-red-500 mr-2" />
-                    Students who see peers with impossible wealth
+                    {t('about.who.students')}
                   </li>
                   <li className="flex items-center">
                     <Heart className="w-4 h-4 text-red-500 mr-2" />
-                    Parents struggling while politicians' kids live lavishly
+                    {t('about.who.parents')}
                   </li>
                   <li className="flex items-center">
                     <Heart className="w-4 h-4 text-red-500 mr-2" />
-                    Taxpayers demanding accountability
+                    {t('about.who.taxpayers')}
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">We are united by:</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('about.who.united')}</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-center">
                     <Shield className="w-4 h-4 text-blue-500 mr-2" />
-                    Love for our country Nepal
+                    {t('about.who.love')}
                   </li>
                   <li className="flex items-center">
                     <Shield className="w-4 h-4 text-blue-500 mr-2" />
-                    Desire for transparent governance
+                    {t('about.who.transparency')}
                   </li>
                   <li className="flex items-center">
                     <Shield className="w-4 h-4 text-blue-500 mr-2" />
-                    Belief in justice and fairness
+                    {t('about.who.justice')}
                   </li>
                   <li className="flex items-center">
                     <Shield className="w-4 h-4 text-blue-500 mr-2" />
-                    Hope for a better future
+                    {t('about.who.hope')}
                   </li>
                 </ul>
               </div>
@@ -101,35 +97,34 @@ export default function About() {
           <div className="card">
             <div className="flex items-center mb-6">
               <Flag className="w-8 h-8 text-nepal-red mr-3" />
-              <h2 className="text-2xl font-bold text-gray-900">Why "Jhappad"?</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('about.why.title')}</h2>
             </div>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              <strong>"Jhappad"</strong> means "slap" in Nepali. This platform is our 
-              collective slap to:
+              {t('about.why.description')}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-red-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-red-800 mb-2">Corrupt Politicians</h4>
+                <h4 className="font-semibold text-red-800 mb-2">{t('about.why.corrupt')}</h4>
                 <p className="text-red-700 text-sm">
-                  Who steal from the people and live like kings while citizens suffer
+                  {t('about.why.corrupt.desc')}
                 </p>
               </div>
               <div className="bg-red-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-red-800 mb-2">Hypocrisy</h4>
+                <h4 className="font-semibold text-red-800 mb-2">{t('about.why.hypocrisy')}</h4>
                 <p className="text-red-700 text-sm">
-                  Of claiming to serve the people while their children flaunt impossible wealth
+                  {t('about.why.hypocrisy.desc')}
                 </p>
               </div>
               <div className="bg-red-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-red-800 mb-2">Injustice</h4>
+                <h4 className="font-semibold text-red-800 mb-2">{t('about.why.injustice')}</h4>
                 <p className="text-red-700 text-sm">
-                  Where honest people struggle while corrupt families prosper
+                  {t('about.why.injustice.desc')}
                 </p>
               </div>
               <div className="bg-red-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-red-800 mb-2">Silence</h4>
+                <h4 className="font-semibold text-red-800 mb-2">{t('about.why.silence')}</h4>
                 <p className="text-red-700 text-sm">
-                  That allows corruption to continue unchecked in our society
+                  {t('about.why.silence.desc')}
                 </p>
               </div>
             </div>
@@ -141,46 +136,42 @@ export default function About() {
           <div className="card">
             <div className="flex items-center mb-6">
               <Globe className="w-8 h-8 text-nepal-blue mr-3" />
-              <h2 className="text-2xl font-bold text-gray-900">Our Approach</h2>
+              <h2 className="text-2xl font-bold text-gray-900">{t('about.approach.title')}</h2>
             </div>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <div className="bg-nepal-red text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Document Everything</h4>
+                  <h4 className="font-semibold text-gray-900">{t('about.approach.step1')}</h4>
                   <p className="text-gray-700">
-                    We collect and verify information about politicians' children's lifestyles, 
-                    education, and business interests from credible sources.
+                    {t('about.approach.step1.desc')}
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="bg-nepal-red text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Source Everything</h4>
+                  <h4 className="font-semibold text-gray-900">{t('about.approach.step2')}</h4>
                   <p className="text-gray-700">
-                    Every piece of information is backed by credible sources - news articles, 
-                    social media posts, business registries, and official documents.
+                    {t('about.approach.step2.desc')}
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="bg-nepal-red text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Expose Hypocrisy</h4>
+                  <h4 className="font-semibold text-gray-900">{t('about.approach.step3')}</h4>
                   <p className="text-gray-700">
-                    We highlight the disconnect between declared family income and the 
-                    extravagant lifestyles of politicians' children.
+                    {t('about.approach.step3.desc')}
                   </p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="bg-nepal-red text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Demand Accountability</h4>
+                  <h4 className="font-semibold text-gray-900">{t('about.approach.step4')}</h4>
                   <p className="text-gray-700">
-                    We call for transparency, proper investigation, and accountability 
-                    from our elected representatives.
+                    {t('about.approach.step4.desc')}
                   </p>
                 </div>
               </div>
@@ -191,10 +182,9 @@ export default function About() {
         {/* Call to Action */}
         <div className="max-w-4xl mx-auto text-center">
           <div className="card bg-gradient-to-r from-nepal-red to-nepal-blue text-white">
-            <h2 className="text-2xl font-bold mb-4">Join the Movement</h2>
+            <h2 className="text-2xl font-bold mb-4">{t('about.cta.title')}</h2>
             <p className="text-lg mb-6 opacity-90">
-              Together, we can deliver the biggest <strong>JHAPPAD</strong> to corruption 
-              that Nepal has ever seen. Every contribution matters.
+              {t('about.cta.description')}
             </p>
             <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
               <a
@@ -203,17 +193,17 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="bg-white text-nepal-red px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block w-full sm:w-auto"
               >
-                📝 Report Corruption Anonymously
+                📝 {t('about.cta.report')}
               </a>
               <a
                 href="/contribute"
                 className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-nepal-red transition-colors inline-block w-full sm:w-auto"
               >
-                Technical Contribution
+                {t('about.cta.technical')}
               </a>
             </div>
             <p className="text-sm mt-4 opacity-75">
-              Report corruption anonymously or contribute technically - both ways help expose corruption!
+              {t('about.cta.footer')}
             </p>
           </div>
         </div>
