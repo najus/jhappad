@@ -166,5 +166,45 @@
       "https://ekarmachari.com/archives/9491",
       "https://www.nepalpress.com/2022/11/16/256650/"
     ]
+  },
+  {
+    "id": "politician-006",
+    "name": "K.P. Sharma Oli",
+    "position": "Former Prime Minister of Nepal",
+    "party": "CPN–UML",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/d/dd/The_Prime_Minister_of_Nepal%2C_Shri_KP_Sharma_Oli_at_Bangkok%2C_in_Thailand_on_April_04%2C_2025_%28cropped%29.jpg",
+    "estimatedWealth": "NPR 300 crores",
+    "corruptionAllegations": [
+      "Accused of facilitating a land-swap policy amendment (Land Act, 1964) benefiting the Giri Bandhu Tea Estate in Jhapa, undermining land reform laws for commercial gain. Supreme Court annulled the approval.",
+      "Alleged to have obstructed accountability by influencing the CIAA not to file charges in the Lalita Niwas land corruption case.",
+      "Criticized for awarding overpriced or deficient infrastructure contracts (e.g., medical equipment supplied via OMNI Group with known ties to his office).",
+      "Claimed by Prachanda to have shielded corruption—accused of accepting land from individuals under legal scrutiny, effectively shielding wrongdoing.",
+      "Subject to public outrage and protests—his resignation followed anti-corruption protests where his residence and offices were torched."
+    ],
+    "children": [
+      {
+        "name": "Radhika Shakya",
+        "relationship": "wife",
+        "photo": "https://encdn.ratopati.com/media/news/radhika-shakya_bTIndakBEW.png",
+        "sources": [
+          "https://reviewnepal.com/articles/amazing-property-details-of-ministers.html",
+          "https://xnepali.net/gold-lover-nepali-ministers-how-rich-are-cabinet-ministers-of-kp-oli"
+        ]
+      }
+    ],
+    "lastUpdated": "2025-09-09",
+    "sources": [
+      "https://reviewnepal.com/articles/amazing-property-details-of-ministers.html",
+      "https://xnepali.net/gold-lover-nepali-ministers-how-rich-are-cabinet-ministers-of-kp-oli",
+      "https://kathmandupost.com/national/2024/06/04/mayor-joins-congress-in-accusing-oli-in-giri-bandhu-land-scam",
+      "https://en.wikipedia.org/wiki/Giri_Bandhu_Tea_Estate_Corruption",
+      "https://kathmandupost.com/national/2025/01/01/bhim-rawal-accuses-prime-minister-oli-of-shielding-corruption-and-fostering-autocracy",
+      "https://global-watch-analysis.com/en/nepal-les-sulfureuses-accointances-chinoises-du-premier-ministre-kp-sharma-oli",
+      "https://nepalnews.com/s/politics/pm-oli-s-actions-confirm-corruption-allegations-prachanda",
+      "https://www.reuters.com/business/media-telecom/nepal-pm-oli-resigns-after-violent-anti-corruption-protests-his-aide-says-2025-09-09",
+      "https://www.washingtonpost.com/world/2025/09/09/nepal-social-media-protests-prime-minister-resigns",
+      "https://apnews.com/article/9dc6ecd2c089141cc8c36af5949cfc09",
+      "https://www.india.com/news/world/kp-sharma-oli-net-worth-nepals-former-pm-kp-sharma-oli-oli-owns-assets-gen-z-youth-protest-social-media-ban-8064885/"
+    ]
   }
 ]

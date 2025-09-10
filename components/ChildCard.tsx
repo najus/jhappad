@@ -21,6 +21,8 @@ export default function ChildCard({ child }: ChildCardProps) {
         return '👨‍👩‍👦'
       case 'adopted_daughter':
         return '👨‍👩‍👧'
+      case 'wife':
+        return '👩'
       default:
         return '👶'
     }

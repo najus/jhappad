@@ -69,7 +69,7 @@
         },
         "relationship": {
           "type": "string",
-          "enum": ["son", "daughter", "adopted_son", "adopted_daughter"],
+          "enum": ["son", "daughter", "adopted_son", "adopted_daughter", "wife"],
           "description": "Relationship to the politician"
         },
         "age": {
