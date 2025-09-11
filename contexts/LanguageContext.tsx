@@ -46,7 +46,7 @@ const translations = {
     'home.cta.github': 'View on GitHub',
     
     // Politician Card
-    'politician.children': 'family',
+    'politician.children': 'Family',
     'politician.allegations': 'Corruption Allegations:',
     'politician.showMore': 'more allegations (tap to expand)',
     'politician.showLess': 'Show less',

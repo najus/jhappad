@@ -206,5 +206,76 @@
       "https://apnews.com/article/9dc6ecd2c089141cc8c36af5949cfc09",
       "https://www.india.com/news/world/kp-sharma-oli-net-worth-nepals-former-pm-kp-sharma-oli-oli-owns-assets-gen-z-youth-protest-social-media-ban-8064885/"
     ]
+  },
+  {
+    "id": "politician-007",
+    "name": "Bam Dev Gautam",
+    "position": "Former Deputy Prime Minister, Former Home Minister",
+    "party": "CPN (Unified Socialist), formerly CPN-UML",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Bamdev_Gautam_2015_%28cropped%29.jpg",
+    "estimatedWealth": "Not clearly documented; allegations of undisclosed income",
+    "corruptionAllegations": [
+      "Accused in the Haj pilgrimage fund embezzlement (~Rs 7.7 million) while serving as Chairman/member of the Central Haj Committee.",
+      "Allegations of incomplete annual property statements and unexplained sources of income.",
+      "Wife named in court documents for alleged concealment of assets."
+    ],
+    "children": [
+      {
+        "name": "Tulsi Thapa (aka Sarla Nepal Gautam)",
+        "relationship": "wife",
+        "age": 65,
+        "photo": "",
+        "education": {
+          "institution": "",
+          "degree": "",
+          "country": "",
+          "cost": ""
+        },
+        "lifestyle": {
+          "luxuryItems": [],
+          "recentSplurges": [],
+          "socialMedia": {
+            "instagram": "",
+            "facebook": "",
+            "tiktok": ""
+          }
+        },
+        "businessInterests": [],
+        "sources": [
+          "https://ekantipur.com/en/news/2025/06/17/corruption-case-against-the-then-officer-of-transport-office-parsa-gautam-wrong-demand-of-rs-23-40.html"
+        ]
+      },
+      {
+        "name": "Harish Gautam",
+        "relationship": "son",
+        "age": 35,
+        "photo": "",
+        "education": {
+          "institution": "",
+          "degree": "",
+          "country": "",
+          "cost": ""
+        },
+        "lifestyle": {
+          "luxuryItems": [],
+          "recentSplurges": [],
+          "socialMedia": {
+            "instagram": "",
+            "facebook": "",
+            "tiktok": ""
+          }
+        },
+        "businessInterests": [],
+        "sources": [
+          "https://nepalnews.com/s/politics/uml-leader-bamdev-gautam-announces-new-party"
+        ]
+      }
+    ],
+    "lastUpdated": "2025-09-11",
+    "sources": [
+      "https://myrepublica.nagariknetwork.com/news/bamdev-not-guilty-in-haj-scam",
+      "https://ekantipur.com/en/news/2025/06/17/corruption-case-against-the-then-officer-of-transport-office-parsa-gautam-wrong-demand-of-rs-23-40.html",
+      "https://nepalnews.com/s/politics/uml-leader-bamdev-gautam-announces-new-party"
+    ]
   }
 ]
