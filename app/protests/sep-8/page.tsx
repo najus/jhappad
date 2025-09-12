@@ -37,12 +37,36 @@ export default function ProtestsPage() {
   const [caption, setCaption] = useState('')
   const fileInputRef = useRef<HTMLInputElement>(null)
   
+  // Image gallery states
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
+  const [currentItems, setCurrentItems] = useState<ProtestItem[]>([])
+  
   const { t } = useLanguage()
 
   // Check admin status on component mount
   useEffect(() => {
     checkAdminStatus()
   }, [])
+
+  // Keyboard navigation for image gallery
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (selectedImageIndex !== null) {
+        if (event.key === 'Escape') {
+          closeImageGallery()
+        } else if (event.key === 'ArrowLeft') {
+          goToPreviousImage()
+        } else if (event.key === 'ArrowRight') {
+          goToNextImage()
+        }
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedImageIndex, currentItems.length])
 
   // Also check admin status when the page becomes visible (in case of redirect from admin login)
   useEffect(() => {
@@ -166,6 +190,33 @@ export default function ProtestsPage() {
     const sizes = ['Bytes', 'KB', 'MB', 'GB']
     const i = Math.floor(Math.log(bytes) / Math.log(1024))
     return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i]
+  }
+
+  // Image gallery functions
+  const openImageGallery = (items: ProtestItem[], index: number) => {
+    const imageItems = items.filter(item => item.contentType?.startsWith('image/'))
+    const imageIndex = imageItems.findIndex(item => item === items[index])
+    if (imageIndex !== -1) {
+      setCurrentItems(imageItems)
+      setSelectedImageIndex(imageIndex)
+    }
+  }
+
+  const closeImageGallery = () => {
+    setSelectedImageIndex(null)
+    setCurrentItems([])
+  }
+
+  const goToPreviousImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1)
+    }
+  }
+
+  const goToNextImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex < currentItems.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1)
+    }
   }
 
   const formatDate = (dateString?: string) => {
@@ -519,22 +570,16 @@ export default function ProtestsPage() {
                           {/* Image Preview for Images */}
                           {item.contentType?.startsWith('image/') && (
                             <div className="mb-3">
-                              <a
-                                href={item.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block group"
-                              >
-                                <img
-                                  src={item.url}
-                                  alt={item.caption || 'Uploaded image'}
-                                  className="w-full h-48 object-cover rounded-lg group-hover:opacity-90 transition-opacity cursor-pointer"
-                                  onError={(e) => {
-                                    // Hide image if it fails to load
-                                    e.currentTarget.style.display = 'none'
-                                  }}
-                                />
-                              </a>
+                              <img
+                                src={item.url}
+                                alt={item.caption || 'Uploaded image'}
+                                className="w-full h-48 object-cover rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
+                                onClick={() => openImageGallery(items, index)}
+                                onError={(e) => {
+                                  // Hide image if it fails to load
+                                  e.currentTarget.style.display = 'none'
+                                }}
+                              />
                             </div>
                           )}
 
@@ -759,6 +804,75 @@ export default function ProtestsPage() {
         title="September 8th Protests - Nepal"
         description="Documenting the truth about the protests and those who tried to exploit them. Help us expose the real story."
       />
+
+      {/* Image Gallery Modal */}
+      {selectedImageIndex !== null && currentItems.length > 0 && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Close Button */}
+            <button
+              onClick={closeImageGallery}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Previous Button */}
+            {selectedImageIndex > 0 && (
+              <button
+                onClick={goToPreviousImage}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+            )}
+
+            {/* Next Button */}
+            {selectedImageIndex < currentItems.length - 1 && (
+              <button
+                onClick={goToNextImage}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            )}
+
+            {/* Image */}
+            <img
+              src={currentItems[selectedImageIndex]?.url}
+              alt={currentItems[selectedImageIndex]?.caption || 'Gallery image'}
+              className="max-w-full max-h-full object-contain mx-auto"
+              style={{ 
+                maxWidth: '90vw', 
+                maxHeight: '90vh',
+                width: 'auto',
+                height: 'auto'
+              }}
+              onError={(e) => {
+                e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzZiNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+PC9zdmc+'
+              }}
+            />
+
+            {/* Image Counter */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-3 py-1 rounded">
+              {selectedImageIndex + 1} of {currentItems.length}
+            </div>
+
+            {/* Caption */}
+            {currentItems[selectedImageIndex]?.caption && (
+              <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-3 py-1 rounded max-w-md text-center">
+                {currentItems[selectedImageIndex].caption}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
