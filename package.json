@@ -22,6 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
+    "@vercel/blob": "^1.1.1",
     "clsx": "2.1.1",
     "lucide-react": "0.400.0",
     "next": "14.2.5",

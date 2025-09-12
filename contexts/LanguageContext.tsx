@@ -24,6 +24,7 @@ const translations = {
     'nav.about': 'About',
     'nav.contribute': 'Contribute',
     'nav.report': 'Report Corruption',
+    'nav.protests': 'Sep 8 Protests',
     'nav.github': 'GitHub',
     
     // Homepage
@@ -181,6 +182,7 @@ const translations = {
     'nav.about': 'हाम्रो बारेमा',
     'nav.contribute': 'योगदान',
     'nav.report': 'भ्रष्टाचार रिपोर्ट',
+    'nav.protests': 'सेप्टेम्बर ८ आन्दोलन',
     'nav.github': 'गिटहब',
     
     // Homepage

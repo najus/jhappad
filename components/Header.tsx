@@ -46,6 +46,12 @@ export default function Header() {
               {t('nav.contribute')}
             </a>
             <a
+              href="/protests/sep-8"
+              className="text-gray-600 hover:text-nepal-red transition-colors"
+            >
+              {t('nav.protests')}
+            </a>
+            <a
               href="/about"
               className="text-gray-600 hover:text-nepal-red transition-colors"
             >
@@ -98,6 +104,13 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t('nav.contribute')}
+              </a>
+              <a
+                href="/protests/sep-8"
+                className="text-gray-600 hover:text-nepal-red transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {t('nav.protests')}
               </a>
               <a
                 href="/about"
