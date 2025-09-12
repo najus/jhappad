@@ -41,6 +41,9 @@ export default function ProtestsPage() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
   const [currentItems, setCurrentItems] = useState<ProtestItem[]>([])
   
+  // View counter states
+  const [viewCounts, setViewCounts] = useState<Record<string, number>>({})
+  
   const { t } = useLanguage()
 
   // Check admin status on component mount
@@ -138,8 +141,16 @@ export default function ProtestsPage() {
       const genzData = await genzResponse.json()
       const protestData = await protestResponse.json()
 
+      const allItems = [
+        ...(genzData.items || []),
+        ...(protestData.items || [])
+      ]
+      
       setGenzApproved(genzData.items || [])
       setProtestApproved(protestData.items || [])
+      
+      // Load view counts for all items
+      loadViewCounts(allItems)
     } catch (error) {
       console.error('Error loading approved items:', error)
       setGenzApproved([])
@@ -170,10 +181,20 @@ export default function ProtestsPage() {
       console.log('Protest Approved:', protestApprovedData.items?.length || 0, protestApprovedData)
       console.log('Protest Pending:', protestPendingData.items?.length || 0, protestPendingData)
 
+      const allItems = [
+        ...(genzApprovedData.items || []),
+        ...(genzPendingData.items || []),
+        ...(protestApprovedData.items || []),
+        ...(protestPendingData.items || [])
+      ]
+      
       setGenzApproved(genzApprovedData.items || [])
       setGenzPending(genzPendingData.items || [])
       setProtestApproved(protestApprovedData.items || [])
       setProtestPending(protestPendingData.items || [])
+      
+      // Load view counts for all items
+      loadViewCounts(allItems)
     } catch (error) {
       console.error('Error loading items:', error)
       setGenzApproved([])
@@ -199,6 +220,12 @@ export default function ProtestsPage() {
     if (imageIndex !== -1) {
       setCurrentItems(imageItems)
       setSelectedImageIndex(imageIndex)
+      
+      // Increment view count for the clicked image
+      const clickedItem = items[index]
+      if (clickedItem) {
+        incrementViewCount(clickedItem.pathname)
+      }
     }
   }
 
@@ -216,6 +243,57 @@ export default function ProtestsPage() {
   const goToNextImage = () => {
     if (selectedImageIndex !== null && selectedImageIndex < currentItems.length - 1) {
       setSelectedImageIndex(selectedImageIndex + 1)
+    }
+  }
+
+  // View counter functions
+  const incrementViewCount = async (pathname: string) => {
+    try {
+      const response = await fetch('/api/protests/sep-8/view/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ pathname })
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        setViewCounts(prev => ({
+          ...prev,
+          [pathname]: data.viewCount
+        }))
+      }
+    } catch (error) {
+      console.error('Failed to increment view count:', error)
+      // Fallback: increment locally
+      setViewCounts(prev => ({
+        ...prev,
+        [pathname]: (prev[pathname] || 0) + 1
+      }))
+    }
+  }
+
+  const loadViewCounts = async (items: ProtestItem[]) => {
+    try {
+      const promises = items.map(async (item) => {
+        const response = await fetch(`/api/protests/sep-8/view/?pathname=${encodeURIComponent(item.pathname)}`)
+        if (response.ok) {
+          const data = await response.json()
+          return { pathname: item.pathname, count: data.viewCount }
+        }
+        return { pathname: item.pathname, count: 0 }
+      })
+      
+      const results = await Promise.all(promises)
+      const newViewCounts: Record<string, number> = {}
+      results.forEach(result => {
+        newViewCounts[result.pathname] = result.count
+      })
+      
+      setViewCounts(prev => ({ ...prev, ...newViewCounts }))
+    } catch (error) {
+      console.error('Failed to load view counts:', error)
     }
   }
 
@@ -591,6 +669,10 @@ export default function ProtestsPage() {
                                 className="w-full max-h-64 rounded-lg"
                                 preload="metadata"
                                 style={{ aspectRatio: 'auto' }}
+                                onPlay={() => {
+                                  // Increment view count when video starts playing
+                                  incrementViewCount(item.pathname)
+                                }}
                                 onError={(e) => {
                                   // Hide video if it fails to load and show fallback
                                   const videoElement = e.currentTarget
@@ -629,6 +711,14 @@ export default function ProtestsPage() {
                               {getFileTypeIcon(item.contentType)}
                             </div>
                             <div className="flex items-center space-x-2">
+                              {/* View Counter */}
+                              <div className="flex items-center text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                                <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                {viewCounts[item.pathname] || 0}
+                              </div>
                               <div className="text-xs text-gray-500">
                                 {formatFileSize(item.size)}
                               </div>

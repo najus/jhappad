@@ -20,8 +20,9 @@ This platform aims to expose corruption by documenting the lavish lifestyles of 
 - **Frontend**: Next.js 14 with React 18
 - **Styling**: Tailwind CSS
 - **Data**: JSON files with schema validation
+- **View Counter**: Upstash Redis (Redis-compatible)
 - **Icons**: Lucide React
-- **Deployment**: GitHub Pages ready
+- **Deployment**: Vercel ready
 
 ## 📊 Data Structure
 
@@ -149,6 +150,36 @@ npm install
 # Run development server
 npm run dev
 ```
+
+### Upstash Redis Setup (for View Counters)
+
+The view counter feature uses Upstash Redis for persistent storage. To set it up:
+
+1. **Create an Upstash Redis database**:
+   - Go to [Vercel Marketplace](https://vercel.com/marketplace)
+   - Search for "Upstash Redis"
+   - Click "Add Integration"
+   - Create a new Redis database
+   - Connect it to your Vercel project
+
+2. **Get your credentials**:
+   - The integration automatically adds these environment variables:
+   - `REDIS_KV_REST_API_URL`
+   - `REDIS_KV_REST_API_TOKEN`
+
+3. **For local development**:
+   ```bash
+   # Copy the example file
+   cp .env.example .env.local
+   
+   # Add your Redis credentials to .env.local
+   REDIS_KV_REST_API_URL=your_upstash_redis_rest_url_here
+   REDIS_KV_REST_API_TOKEN=your_upstash_redis_rest_token_here
+   ```
+
+4. **Deploy to Vercel**:
+   - The environment variables will be automatically configured in your Vercel project
+   - View counters will work immediately after deployment
 
 ### Building for Production
 
