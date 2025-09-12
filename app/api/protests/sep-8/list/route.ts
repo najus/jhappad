@@ -11,6 +11,7 @@ async function getBlob() {
 }
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
 export async function GET(req: NextRequest) {
   try {
@@ -39,7 +40,7 @@ export async function GET(req: NextRequest) {
   
     const items = result.blobs.map((b) => {
       // Fallback contentType detection based on file extension
-      let contentType = b.contentType
+      let contentType = (b as any).contentType
       if (!contentType) {
         const extension = b.pathname.split('.').pop()?.toLowerCase()
         switch (extension) {
@@ -79,7 +80,7 @@ export async function GET(req: NextRequest) {
         uploadedAt: b.uploadedAt?.toString?.() ?? undefined,
         size: b.size,
         contentType,
-        caption: (b.metadata as any)?.caption || undefined,
+        caption: ((b as any).metadata as any)?.caption || undefined,
       }
     })
 

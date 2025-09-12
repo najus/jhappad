@@ -12,6 +12,7 @@ async function getBlob() {
 }
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
   try {
@@ -37,7 +38,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Blob SDK not available. Deploy to Vercel with @vercel/blob.' }, { status: 503 })
     }
 
-    const { put, upload } = blobMod
+    const { put } = blobMod
 
     // Store first as pending: protests/sep-8/{type}/pending/{timestamp}-{filename}
     const ext = file.name?.split('.').pop() || 'bin'

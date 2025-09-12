@@ -11,6 +11,7 @@ async function getBlob() {
 }
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
 export async function GET(req: NextRequest) {
   try {
@@ -48,8 +49,8 @@ export async function GET(req: NextRequest) {
           count: result.blobs.length,
           paths: result.blobs.map(b => b.pathname)
         }
-      } catch (e) {
-        results[prefix] = { error: e.message }
+      } catch (e: any) {
+        results[prefix] = { error: e?.message || 'Unknown error' }
       }
     }
 

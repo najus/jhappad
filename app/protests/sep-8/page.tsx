@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Lock, Unlock, Upload, Eye, EyeOff, LogOut, RefreshCw, Check, X, AlertTriangle, Camera, Users } from 'lucide-react'
 import Header from '@/components/Header'
+import SocialShare from '@/components/SocialShare'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 interface ProtestItem {
@@ -442,6 +443,15 @@ export default function ProtestsPage() {
                     : 'Photos and videos from the actual protests'
                   }
                 </p>
+                {activeSection === 'genz' && (
+                  <div className="mt-4">
+                    <SocialShare 
+                      variant="compact"
+                      title="GenZ Imposters - September 8th Protests"
+                      description="These are the GenZ imposters who destroyed public properties. Report and share these people to expose the real culprits behind the violence."
+                    />
+                  </div>
+                )}
               </div>
               <div className="flex items-center space-x-2">
                 <button
@@ -701,6 +711,13 @@ export default function ProtestsPage() {
           )}
         </div>
       </main>
+      
+      {/* Floating Share Button */}
+      <SocialShare 
+        variant="floating"
+        title="September 8th Protests - Nepal"
+        description="Documenting the truth about the protests and those who tried to exploit them. Help us expose the real story."
+      />
     </div>
   )
 }

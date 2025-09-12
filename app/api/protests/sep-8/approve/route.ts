@@ -11,6 +11,7 @@ async function getBlob() {
 }
 
 export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
 
 export async function POST(req: NextRequest) {
   try {
@@ -64,7 +65,6 @@ export async function POST(req: NextRequest) {
       access: 'public',
       addRandomSuffix: false,
       contentType: fileInfo.contentType || undefined,
-      metadata: fileInfo.metadata || undefined,
     })
     
     // Delete the pending file
