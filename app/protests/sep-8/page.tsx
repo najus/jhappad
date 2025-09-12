@@ -537,6 +537,47 @@ export default function ProtestsPage() {
                               </a>
                             </div>
                           )}
+
+                          {/* Video Preview for Videos */}
+                          {item.contentType?.startsWith('video/') && (
+                            <div className="mb-3">
+                              <video
+                                controls
+                                className="w-full max-h-64 rounded-lg"
+                                preload="metadata"
+                                style={{ aspectRatio: 'auto' }}
+                                onError={(e) => {
+                                  // Hide video if it fails to load and show fallback
+                                  const videoElement = e.currentTarget
+                                  videoElement.style.display = 'none'
+                                  const fallback = videoElement.nextElementSibling as HTMLElement
+                                  if (fallback) {
+                                    fallback.style.display = 'block'
+                                  }
+                                }}
+                              >
+                                <source src={item.url} type={item.contentType} />
+                                Your browser does not support the video tag.
+                              </video>
+                              <div 
+                                className="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500"
+                                style={{ display: 'none' }}
+                              >
+                                <div className="text-center">
+                                  <div className="text-4xl mb-2">🎥</div>
+                                  <p className="text-sm">Video preview unavailable</p>
+                                  <a 
+                                    href={item.url} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-nepal-red hover:underline text-sm mt-1 inline-block"
+                                  >
+                                    Download video
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          )}
                           
                           <div className="flex items-start justify-between mb-3">
                             <div className="text-2xl">
@@ -681,7 +722,7 @@ export default function ProtestsPage() {
                 <br />
                 You can also use our{' '}
                 <a
-                  href="https://forms.gle/eUw7LfJdaxryWFw37"
+                  href="https://forms.gle/eUw7LfJdaxryWFw37 "
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-nepal-red hover:underline"

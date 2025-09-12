@@ -66,6 +66,18 @@ export async function GET(req: NextRequest) {
           case 'avi':
             contentType = 'video/x-msvideo'
             break
+          case 'webm':
+            contentType = 'video/webm'
+            break
+          case 'mkv':
+            contentType = 'video/x-matroska'
+            break
+          case 'flv':
+            contentType = 'video/x-flv'
+            break
+          case 'wmv':
+            contentType = 'video/x-ms-wmv'
+            break
           case 'pdf':
             contentType = 'application/pdf'
             break
