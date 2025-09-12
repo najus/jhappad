@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Flag, Github, Menu, X } from 'lucide-react'
+import { Flag, Menu, X } from 'lucide-react'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -40,33 +40,12 @@ export default function Header() {
               📝 {t('nav.report')}
             </a>
             <a
-              href="/contribute"
-              className="text-gray-600 hover:text-nepal-red transition-colors"
-            >
-              {t('nav.contribute')}
-            </a>
-            <a
               href="/protests/sep-8"
-              className="text-gray-600 hover:text-nepal-red transition-colors"
+              className="bg-amber-100 text-amber-800 px-4 py-2 rounded-lg text-sm font-medium hover:bg-amber-200 transition-colors border border-amber-300"
             >
-              {t('nav.protests')}
-            </a>
-            <a
-              href="/about"
-              className="text-gray-600 hover:text-nepal-red transition-colors"
-            >
-              {t('nav.about')}
+              🚨 {t('nav.protests')}
             </a>
             <LanguageSwitcher />
-            <a
-              href="https://github.com/najus/jhappad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-nepal-red transition-colors"
-              title={t('nav.github')}
-            >
-              <Github className="w-5 h-5" />
-            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -99,35 +78,11 @@ export default function Header() {
                 📝 {t('nav.report')}
               </a>
               <a
-                href="/contribute"
-                className="text-gray-600 hover:text-nepal-red transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {t('nav.contribute')}
-              </a>
-              <a
                 href="/protests/sep-8"
-                className="text-gray-600 hover:text-nepal-red transition-colors py-2"
+                className="bg-amber-100 text-amber-800 px-4 py-2 rounded-md text-sm font-medium hover:bg-amber-200 transition-colors text-center border border-amber-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {t('nav.protests')}
-              </a>
-              <a
-                href="/about"
-                className="text-gray-600 hover:text-nepal-red transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {t('nav.about')}
-              </a>
-              <a
-                href="https://github.com/najus/jhappad"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-nepal-red transition-colors py-2 flex items-center"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <Github className="w-5 h-5 mr-2" />
-                {t('nav.github')}
+                🚨 {t('nav.protests')}
               </a>
               {/* Language Switcher - More prominent in mobile */}
               <div className="py-2 border-t border-gray-200 mt-2">

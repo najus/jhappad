@@ -318,6 +318,41 @@ export default function ProtestsPage() {
             <p className="text-xl text-gray-600">
               Documenting the truth about the protests and those who tried to exploit them
             </p>
+            <div className="mt-4 text-sm text-gray-500">
+              <p>
+                Media credit: <a 
+                  href="https://september-8-nepal.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-nepal-red hover:underline"
+                >
+                  @september-8-nepal.vercel.app
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Content Advisory */}
+          <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8 rounded-r-lg">
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <svg className="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <h3 className="text-sm font-medium text-amber-800">
+                  Content Advisory
+                </h3>
+                <div className="mt-2 text-sm text-amber-700">
+                  <p>
+                    <strong>Warning:</strong> This section contains graphic content including images and videos of protests, violence, and property damage. 
+                    Some content may be disturbing or inappropriate for sensitive viewers. 
+                    Please proceed with caution and discretion.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Admin Status and Controls */}
@@ -636,7 +671,7 @@ export default function ProtestsPage() {
                 <br />
                 You can also use our{' '}
                 <a
-                  href="https://forms.gle/w7jEJtD2HSrgDNcw5"
+                  href="https://forms.gle/eUw7LfJdaxryWFw37"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-nepal-red hover:underline"
