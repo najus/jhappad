@@ -114,7 +114,7 @@
     "name": "Dev Kumar Nepali",
     "position": "Former Mayor of Dhorpatan Municipality",
     "party": "CPN–UML (formerly CPN (Maoist Centre))",
-    "photo": "https://via.placeholder.com/150x150/DC143C/FFFFFF?text=DKN",
+    "photo": "https://english.onlinekhabar.com/wp-content/uploads/2023/05/Dhorpatan-mayor.jpg",
     "estimatedWealth": "N/A",
     "corruptionAllegations": [
       "Founder and chairman of Image Savings and Credit Cooperative; accused of embezzling over NPR 2.25 billion from thousands of depositors.",
@@ -276,6 +276,47 @@
       "https://myrepublica.nagariknetwork.com/news/bamdev-not-guilty-in-haj-scam",
       "https://ekantipur.com/en/news/2025/06/17/corruption-case-against-the-then-officer-of-transport-office-parsa-gautam-wrong-demand-of-rs-23-40.html",
       "https://nepalnews.com/s/politics/uml-leader-bamdev-gautam-announces-new-party"
+    ]
+  },
+  {
+    "id": "politician-008",
+    "name": "Mahesh Basnet",
+    "position": "Member of Parliament, Pratinidhi Sabha (Ilam-1); Former Minister of Industry",
+    "party": "CPN (UML)",
+    "photo": "https://en.setopati.com/uploads/posts/1614667638Mahesh_Basnet_Setopati.jpg",
+    "estimatedWealth": "Not publicly disclosed in detail",
+    "corruptionAllegations": [
+      "Failed to disclose property details within required timeframe when serving as Minister of Industry",
+      "Accused of rape and forcing abortion by a same-party female member; FIR filed",
+      "Used political rhetoric to accuse others of corruption (e.g. Kulman Ghising) while questions remain about his own assets and transparency"
+    ],
+    "children": [
+      {
+        "name": "Not publicly available",
+        "relationship": "son",
+        "age": null,
+        "photo": null,
+        "education": null,
+        "lifestyle": null,
+        "businessInterests": null,
+        "sources": []
+      },
+      {
+        "name": "Not publicly available",
+        "relationship": "daughter",
+        "age": null,
+        "photo": null,
+        "education": null,
+        "lifestyle": null,
+        "businessInterests": null,
+        "sources": []
+      }
+    ],
+    "lastUpdated": "2025-09-15",
+    "sources": [
+      "https://kathmandupost.com/miscellaneous/2014/12/03/minister-duo-basnet-amatya-fail-to-disclose-property-details",
+      "https://en.wikipedia.org/wiki/Mahesh_Basnet_(born_1975)",
+      "https://nepalnews.com/s/capital/mahesh-basnet-accuses-kulman-of-corruption-under-the-guise-of-populism"
     ]
   }
 ]
