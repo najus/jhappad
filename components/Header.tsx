@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Flag, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -14,7 +14,7 @@ export default function Header() {
       <div className="container-responsive py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Flag className="w-6 h-6 sm:w-8 sm:h-8 text-nepal-red" />
+            <div className="text-2xl sm:text-3xl">👋</div>
             <a href="/" className="hover:opacity-80 transition-opacity">
               <div>
               <h1 className="text-xl sm:text-2xl font-bold text-gray-900">{t('home.title')}</h1>

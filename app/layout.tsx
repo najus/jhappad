@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children who spend taxpayers money on their personal luxuries',
   keywords: ['nepal', 'corruption', 'transparency', 'accountability', 'politics', 'jhappad', 'slap'],
   authors: [{ name: 'Jhappad.com Contributors' }],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'Jhappad.com - A Slap to Corruption in Nepal',
     description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children who spend taxpayers money on their personal luxuries',
