@@ -215,10 +215,8 @@ const translations = {
     
     // Politician Card
     'politician.estimatedWealth': 'Estimated Wealth',
-    'politician.lastUpdated': 'Last Updated',
     'politician.corruptionAllegations': 'Corruption Allegations',
     'politician.familyMembers': 'Family Members',
-    'politician.sources': 'Sources',
     'politician.shareInformation': 'Share This Information',
     'politician.shareDescription': 'Help expose corruption by sharing {name}\'s details on social media.',
     'politician.moreAllegations': 'more allegations',
@@ -458,10 +456,8 @@ const translations = {
     
     // Politician Card
     'politician.estimatedWealth': 'अनुमानित सम्पत्ति',
-    'politician.lastUpdated': 'अन्तिम अपडेट',
     'politician.corruptionAllegations': 'भ्रष्टाचार आरोपहरू',
     'politician.familyMembers': 'परिवार सदस्यहरू',
-    'politician.sources': 'स्रोतहरू',
     'politician.shareInformation': 'यो जानकारी साझा गर्नुहोस्',
     'politician.shareDescription': '{name} को विवरण सामाजिक मिडियामा साझा गरेर भ्रष्टाचार उजागर गर्न मद्दत गर्नुहोस्।',
     'politician.moreAllegations': 'अधिक आरोपहरू',
