@@ -172,35 +172,35 @@ export default function Contribute() {
           <div className="card">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <Search className="w-6 h-6 text-nepal-red mr-3" />
-              Source Requirements
+              {t('contribute.sources.title')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 className="text-lg font-semibold text-green-700 mb-3 flex items-center">
                   <CheckCircle className="w-5 h-5 mr-2" />
-                  Acceptable Sources
+                  {t('contribute.sources.acceptable')}
                 </h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• News articles from reputable media</li>
-                  <li>• Official government documents</li>
-                  <li>• Public business registry records</li>
-                  <li>• Social media posts (with screenshots)</li>
-                  <li>• Court documents and legal filings</li>
-                  <li>• Academic research and reports</li>
+                  <li>• {t('contribute.sources.acceptable.news')}</li>
+                  <li>• {t('contribute.sources.acceptable.documents')}</li>
+                  <li>• {t('contribute.sources.acceptable.registry')}</li>
+                  <li>• {t('contribute.sources.acceptable.social')}</li>
+                  <li>• {t('contribute.sources.acceptable.court')}</li>
+                  <li>• {t('contribute.sources.acceptable.research')}</li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-red-700 mb-3 flex items-center">
                   <AlertCircle className="w-5 h-5 mr-2" />
-                  Unacceptable Sources
+                  {t('contribute.sources.unacceptable')}
                 </h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• Unverified rumors or hearsay</li>
-                  <li>• Personal blogs without credibility</li>
-                  <li>• Anonymous social media accounts</li>
-                  <li>• Speculation without evidence</li>
-                  <li>• Private or confidential information</li>
-                  <li>• Personal opinions without facts</li>
+                  <li>• {t('contribute.sources.unacceptable.rumors')}</li>
+                  <li>• {t('contribute.sources.unacceptable.blogs')}</li>
+                  <li>• {t('contribute.sources.unacceptable.anonymous')}</li>
+                  <li>• {t('contribute.sources.unacceptable.speculation')}</li>
+                  <li>• {t('contribute.sources.unacceptable.private')}</li>
+                  <li>• {t('contribute.sources.unacceptable.opinions')}</li>
                 </ul>
               </div>
             </div>
@@ -212,13 +212,13 @@ export default function Contribute() {
           <div className="card">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <Users className="w-6 h-6 text-nepal-blue mr-3" />
-              Step-by-Step Contribution Guide
+              {t('contribute.guide.title')}
             </h2>
             <div className="space-y-6">
               <div className="border-l-4 border-nepal-red pl-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 1: Fork the Repository</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contribute.guide.step1.title')}</h3>
                 <p className="text-gray-700 mb-2">
-                  Go to <a href="https://github.com/najus/jhappad" className="text-nepal-red hover:underline">our GitHub repository</a> and click the "Fork" button.
+                  {t('contribute.guide.step1.desc')}
                 </p>
                 <div className="bg-gray-100 p-3 rounded text-sm font-mono">
                   git clone https://github.com/najus/jhappad.git
@@ -226,9 +226,9 @@ export default function Contribute() {
               </div>
               
               <div className="border-l-4 border-nepal-red pl-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 2: Create a Branch</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contribute.guide.step2.title')}</h3>
                 <p className="text-gray-700 mb-2">
-                  Create a new branch for your contribution:
+                  {t('contribute.guide.step2.desc')}
                 </p>
                 <div className="bg-gray-100 p-3 rounded text-sm font-mono">
                   git checkout -b add-politician-[politician-name]
@@ -236,21 +236,21 @@ export default function Contribute() {
               </div>
               
               <div className="border-l-4 border-nepal-red pl-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 3: Add Your Data</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contribute.guide.step3.title')}</h3>
                 <p className="text-gray-700 mb-2">
-                  Edit the file <code className="bg-gray-100 px-2 py-1 rounded text-sm">public/data/politicians.json</code> and add your politician information following the schema.
+                  {t('contribute.guide.step3.desc')}
                 </p>
                 <div className="bg-yellow-50 border border-yellow-200 p-3 rounded">
                   <p className="text-yellow-800 text-sm">
-                    <strong>Tip:</strong> Check the existing entries for reference and ensure all required fields are filled.
+                    <strong>Tip:</strong> {t('contribute.guide.step3.tip')}
                   </p>
                 </div>
               </div>
               
               <div className="border-l-4 border-nepal-red pl-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 4: Validate Your Data</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contribute.guide.step4.title')}</h3>
                 <p className="text-gray-700 mb-2">
-                  Run the validation script to check your data:
+                  {t('contribute.guide.step4.desc')}
                 </p>
                 <div className="bg-gray-100 p-3 rounded text-sm font-mono">
                   npm run validate-data
@@ -258,9 +258,9 @@ export default function Contribute() {
               </div>
               
               <div className="border-l-4 border-nepal-red pl-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 5: Submit Pull Request</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contribute.guide.step5.title')}</h3>
                 <p className="text-gray-700 mb-2">
-                  Commit your changes and create a pull request:
+                  {t('contribute.guide.step5.desc')}
                 </p>
                 <div className="bg-gray-100 p-3 rounded text-sm font-mono">
                   git add .<br/>
@@ -277,7 +277,7 @@ export default function Contribute() {
           <div className="card">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <FileText className="w-6 h-6 text-nepal-red mr-3" />
-              Data Format Example
+              {t('contribute.format.title')}
             </h2>
             <div className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto">
               <pre className="text-sm">{`{

@@ -82,7 +82,7 @@ export default function Home() {
           <div className="relative text-center py-8 sm:py-12">
             <div className="inline-flex items-center bg-nepal-red/10 text-nepal-red px-4 py-2 rounded-full text-sm font-medium mb-4">
               <span className="text-lg mr-2">👋</span>
-              Exposing Corruption in Nepal
+              {t('home.exposingCorruption')}
             </div>
             
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
@@ -153,8 +153,8 @@ export default function Home() {
                   <Shield className="w-8 h-8 text-nepal-red" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Corrupt Politicians</h3>
-                  <p className="text-gray-600 text-sm">Browse {totalPoliticians} politicians and their families</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{t('home.corruptPoliticians')}</h3>
+                  <p className="text-gray-600 text-sm">{t('home.browsePoliticians').replace('{count}', totalPoliticians.toString())}</p>
                 </div>
               </div>
             </a>
@@ -168,8 +168,8 @@ export default function Home() {
                   <Camera className="w-8 h-8 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">September 8th Protests</h3>
-                  <p className="text-gray-600 text-sm">Evidence and GenZ imposters</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{t('home.septemberProtests')}</h3>
+                  <p className="text-gray-600 text-sm">{t('home.evidenceGenZ')}</p>
                 </div>
               </div>
             </a>
@@ -179,9 +179,9 @@ export default function Home() {
         {/* Politicians Grid */}
         <div id="politicians" className="py-12">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Corrupt Politicians</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('home.corruptPoliticians')}</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-              Browse through the database of politicians and their families. Click on any card to view detailed information and share on social media.
+              {t('home.browseDatabase')}
             </p>
             
             {/* Inline Search */}
@@ -209,13 +209,13 @@ export default function Home() {
             <div className="text-center py-16">
               <div className="animate-spin rounded-full h-16 w-16 border-4 border-nepal-red/20 border-t-nepal-red mx-auto mb-4"></div>
               <p className="text-xl text-gray-600 mb-2">{t('common.loading')}</p>
-              <p className="text-sm text-gray-500">Loading politician data...</p>
+              <p className="text-sm text-gray-500">{t('home.loadingPoliticians')}</p>
             </div>
           ) : politicians.length === 0 ? (
             <div className="text-center py-16">
               <div className="text-red-500 text-8xl mb-6">⚠️</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Failed to load politicians data</h3>
-              <p className="text-gray-600 mb-6">Please check the browser console for error details</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('home.failedToLoad')}</h3>
+              <p className="text-gray-600 mb-6">{t('home.checkConsole')}</p>
               <button 
                 onClick={() => window.location.reload()} 
                 className="bg-gradient-to-r from-nepal-red to-red-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-lg hover:shadow-xl"
@@ -235,9 +235,9 @@ export default function Home() {
         {/* Social Proof Section */}
         <div className="py-16 bg-white/30 backdrop-blur-sm">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Join the Movement</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('home.joinMovement')}</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Thousands of Nepalis are already using this platform to expose corruption and demand accountability.
+              {t('home.thousandsUsing')}
             </p>
           </div>
           
@@ -246,24 +246,24 @@ export default function Home() {
               <div className="bg-gradient-to-r from-nepal-red to-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 {totalPoliticians}+
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Politicians Exposed</h3>
-              <p className="text-gray-600">Public records of corrupt politicians and their families</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('home.politiciansExposed')}</h3>
+              <p className="text-gray-600">{t('home.publicRecords')}</p>
             </div>
             
             <div className="text-center">
               <div className="bg-gradient-to-r from-nepal-blue to-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 {totalChildren}+
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Family Members</h3>
-              <p className="text-gray-600">Children and relatives living off taxpayer money</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('home.familyMembers')}</h3>
+              <p className="text-gray-600">{t('home.childrenRelatives')}</p>
             </div>
             
             <div className="text-center">
               <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 ∞
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Social Shares</h3>
-              <p className="text-gray-600">Every share helps expose more corruption</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('home.socialShares')}</h3>
+              <p className="text-gray-600">{t('home.everyShareHelps')}</p>
             </div>
           </div>
           
@@ -279,10 +279,9 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 italic">
-                "This platform is giving voice to ordinary Nepalis who are tired of corruption. 
-                Every politician exposed is a step towards a better Nepal."
+                "{t('home.platformVoice')}"
               </p>
-              <p className="text-sm text-gray-500 mt-2">- Anonymous Contributor</p>
+              <p className="text-sm text-gray-500 mt-2">- {t('home.anonymousContributor')}</p>
             </div>
           </div>
         </div>

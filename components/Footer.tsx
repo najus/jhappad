@@ -20,13 +20,13 @@ export default function Footer() {
               {t('home.subtitle')}
             </p>
             <p className="text-sm text-gray-400">
-              A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               <li>
                 <a
@@ -65,7 +65,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.connect')}</h4>
             <ul className="space-y-2">
               <li>
                 <a
@@ -95,7 +95,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Jhappad.com. All rights reserved. | Made with ❤️ for Nepal
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

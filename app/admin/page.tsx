@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { Lock, Unlock, RefreshCw, ArrowLeft } from 'lucide-react'
 import Header from '@/components/Header'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function AdminLoginPage() {
   const [password, setPassword] = useState('')
@@ -11,6 +12,7 @@ export default function AdminLoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const router = useRouter()
+  const { t } = useLanguage()
 
   useEffect(() => {
     // Check if already logged in
@@ -86,8 +88,8 @@ export default function AdminLoginPage() {
             <div className="card text-center">
               <div className="mb-6">
                 <Unlock className="w-16 h-16 text-green-600 mx-auto mb-4" />
-                <h1 className="text-2xl font-bold text-gray-900 mb-2">Login Successful!</h1>
-                <p className="text-gray-600">Redirecting to admin panel...</p>
+                <h1 className="text-2xl font-bold text-gray-900 mb-2">{t('admin.loginSuccessful')}</h1>
+                <p className="text-gray-600">{t('admin.redirecting')}</p>
               </div>
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-nepal-red mx-auto"></div>
             </div>
@@ -109,7 +111,7 @@ export default function AdminLoginPage() {
               className="inline-flex items-center text-gray-600 hover:text-nepal-red transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Protests
+{t('admin.backToProtests')}
             </a>
           </div>
 
@@ -117,14 +119,14 @@ export default function AdminLoginPage() {
           <div className="card">
             <div className="text-center mb-6">
               <Lock className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Login</h1>
-              <p className="text-gray-600">Access the admin panel to manage content</p>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">{t('admin.login')}</h1>
+              <p className="text-gray-600">{t('admin.accessPanel')}</p>
             </div>
             
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                  Admin Password
+                  {t('admin.password')}
                 </label>
                 <input
                   type="password"
@@ -132,7 +134,7 @@ export default function AdminLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-nepal-red focus:border-transparent"
-                  placeholder="Enter admin password"
+                  placeholder={t('admin.enterPassword')}
                   required
                 />
               </div>
@@ -151,12 +153,12 @@ export default function AdminLoginPage() {
                 {isLoading ? (
                   <>
                     <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
-                    Signing in...
+                    {t('admin.signingIn')}
                   </>
                 ) : (
                   <>
                     <Unlock className="w-4 h-4 mr-2" />
-                    Sign In
+                    {t('admin.signIn')}
                   </>
                 )}
               </button>
@@ -166,7 +168,7 @@ export default function AdminLoginPage() {
           {/* Info */}
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-500">
-              Admin access is required to view and manage pending content submissions.
+              {t('admin.accessRequired')}
             </p>
           </div>
         </div>

@@ -92,7 +92,7 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
               ))}
               {politician.corruptionAllegations.length > 1 && (
                 <p className="text-xs text-nepal-red font-medium">
-                  +{politician.corruptionAllegations.length - 1} more allegations
+                  +{politician.corruptionAllegations.length - 1} {t('politician.moreAllegations')}
                 </p>
               )}
             </div>
@@ -151,13 +151,13 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
                   <div className="bg-green-100 rounded-xl p-4 text-center">
                     <DollarSign className="w-8 h-8 text-green-600 mx-auto mb-2" />
                     <div className="text-2xl font-bold text-gray-900">{politician.estimatedWealth}</div>
-                    <div className="text-sm text-gray-600">Estimated Wealth</div>
+                    <div className="text-sm text-gray-600">{t('politician.estimatedWealth')}</div>
                   </div>
                 )}
                 <div className="bg-amber-100 rounded-xl p-4 text-center">
                   <Calendar className="w-8 h-8 text-amber-600 mx-auto mb-2" />
                   <div className="text-2xl font-bold text-gray-900">{new Date(politician.lastUpdated).toLocaleDateString()}</div>
-                  <div className="text-sm text-gray-600">Last Updated</div>
+                  <div className="text-sm text-gray-600">{t('politician.lastUpdated')}</div>
                 </div>
               </div>
 
@@ -166,7 +166,7 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                     <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
-                    Corruption Allegations ({politician.corruptionAllegations.length})
+                    {t('politician.corruptionAllegations')} ({politician.corruptionAllegations.length})
                   </h3>
                   <div className="space-y-3">
                     {politician.corruptionAllegations.map((allegation, index) => (
@@ -182,7 +182,7 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                   <Users className="w-6 h-6 mr-3 text-nepal-red" />
-                  Family Members ({politician.children.length})
+                  {t('politician.familyMembers')} ({politician.children.length})
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {politician.children.map((child, index) => (
@@ -196,7 +196,7 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                     <ExternalLink className="w-6 h-6 mr-3 text-blue-600" />
-                    Sources ({politician.sources.length})
+                    {t('politician.sources')} ({politician.sources.length})
                   </h3>
                   <div className="space-y-2">
                     {politician.sources.map((source, index) => (
@@ -219,10 +219,10 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
               <div className="bg-gray-50 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
                   <Share2 className="w-6 h-6 mr-3 text-nepal-red" />
-                  Share This Information
+                  {t('politician.shareInformation')}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Help expose corruption by sharing {politician.name}'s details on social media.
+                  {t('politician.shareDescription').replace('{name}', politician.name)}
                 </p>
                 <SocialShare 
                   politicianName={politician.name}

@@ -44,6 +44,9 @@ export default function ProtestsPage() {
   // View counter states
   const [viewCounts, setViewCounts] = useState<Record<string, number>>({})
   
+  // Upload section highlight state
+  const [isUploadSectionVisible, setIsUploadSectionVisible] = useState(false)
+  
   const { t } = useLanguage()
 
   // Check admin status on component mount
@@ -91,6 +94,27 @@ export default function ProtestsPage() {
       loadApprovedItems()
     }
   }, [isAdmin])
+
+  // Intersection observer for upload section highlight
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsUploadSectionVisible(entry.isIntersecting)
+      },
+      { threshold: 0.3 }
+    )
+
+    const uploadSection = document.getElementById('upload-section')
+    if (uploadSection) {
+      observer.observe(uploadSection)
+    }
+
+    return () => {
+      if (uploadSection) {
+        observer.unobserve(uploadSection)
+      }
+    }
+  }, [])
 
 
   const checkAdminStatus = async (retryCount = 0) => {
@@ -443,14 +467,14 @@ export default function ProtestsPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              September 8th Protests
+              {t('protests.title')}
             </h1>
             <p className="text-xl text-gray-600">
-              Documenting the truth about the protests and those who tried to exploit them
+              {t('protests.description')}
             </p>
             <div className="mt-4 text-sm text-gray-500">
               <p>
-                Media credit: <a 
+                {t('protests.mediaCredit')} <a 
                   href="https://september-8-nepal.vercel.app/" 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -462,24 +486,64 @@ export default function ProtestsPage() {
             </div>
           </div>
 
-          {/* Content Advisory */}
-          <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-8 rounded-r-lg">
-            <div className="flex items-start">
-              <div className="flex-shrink-0">
-                <svg className="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="ml-3">
-                <h3 className="text-sm font-medium text-amber-800">
-                  Content Advisory
-                </h3>
-                <div className="mt-2 text-sm text-amber-700">
-                  <p>
-                    <strong>Warning:</strong> This section contains graphic content including images and videos of protests, violence, and property damage. 
-                    Some content may be disturbing or inappropriate for sensitive viewers. 
-                    Please proceed with caution and discretion.
+          {/* Content Advisory and Upload Info - Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            {/* Content Advisory */}
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                    <svg className="h-5 w-5 text-orange-600" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-base font-semibold text-orange-900 mb-2">
+                    {t('protests.contentAdvisory')}
+                  </h3>
+                  <p className="text-sm text-orange-800 leading-relaxed">
+                    {t('protests.contentWarning')}
                   </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Upload Information */}
+            <div className="bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                    <Upload className="h-5 w-5 text-indigo-600" />
+                  </div>
+                </div>
+                <div className="ml-4 flex-1">
+                  <h3 className="text-base font-semibold text-indigo-900 mb-2">
+                    {t('protests.uploadTo')} {activeSection === 'genz' ? t('protests.genzImposters') : t('protests.protestMedia')}
+                  </h3>
+                  <p className="text-sm text-indigo-800 leading-relaxed mb-4">
+                    {activeSection === 'genz' 
+                      ? t('protests.uploadDescription')
+                      : t('protests.uploadDescriptionProtest')
+                    }
+                  </p>
+                  <button
+                    onClick={() => {
+                      // Scroll to upload form at bottom
+                      const uploadSection = document.getElementById('upload-section')
+                      if (uploadSection) {
+                        uploadSection.scrollIntoView({ behavior: 'smooth' })
+                      }
+                    }}
+                    className={`inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-sm hover:shadow-md ${
+                      isUploadSectionVisible 
+                        ? 'bg-emerald-500 text-white hover:bg-emerald-600 transform hover:scale-105' 
+                        : 'bg-indigo-500 text-white hover:bg-indigo-600 transform hover:scale-105'
+                    }`}
+                  >
+                    <Upload className="w-4 h-4 mr-2" />
+                    {isUploadSectionVisible ? '✓ ' : ''}{t('protests.uploadFile')}
+                  </button>
                 </div>
               </div>
             </div>
@@ -491,130 +555,134 @@ export default function ProtestsPage() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <Unlock className="w-5 h-5 text-green-600 mr-2" />
-                  <span className="text-green-600 font-semibold">Admin Access Granted</span>
-                  <span className="ml-2 text-sm text-gray-500">• You can view and manage pending items</span>
+                  <span className="text-green-600 font-semibold">{t('protests.adminAccess')}</span>
+                  <span className="ml-2 text-sm text-gray-500">• {t('protests.adminDescription')}</span>
                 </div>
                 <button
                   onClick={handleLogout}
                   className="flex items-center text-gray-600 hover:text-red-600 transition-colors px-3 py-1 rounded hover:bg-red-50"
                 >
                   <LogOut className="w-4 h-4 mr-1" />
-                  Logout
+                  {t('protests.logout')}
                 </button>
               </div>
             </div>
           )}
 
           {/* Section Tabs */}
-          <div className="flex space-x-1 mb-6 bg-gray-200 p-1 rounded-lg">
+          <div className="flex space-x-2 mb-8 bg-gradient-to-r from-gray-50 to-gray-100 p-2 rounded-xl shadow-inner">
             <button
               onClick={() => setActiveSection('genz')}
-              className={`flex-1 py-3 px-4 rounded-md font-medium transition-colors ${
+              className={`flex-1 py-4 px-6 rounded-lg font-semibold transition-all duration-300 ${
                 activeSection === 'genz'
-                  ? 'bg-white text-nepal-red shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white text-red-600 shadow-lg border-2 border-red-200 transform scale-105'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-white/50 hover:shadow-md'
               }`}
             >
-              <AlertTriangle className="w-5 h-5 inline mr-2" />
-              GenZ Imposters
+              <AlertTriangle className="w-5 h-5 inline mr-3" />
+              {t('protests.genzImposters')}
             </button>
             <button
               onClick={() => setActiveSection('protest')}
-              className={`flex-1 py-3 px-4 rounded-md font-medium transition-colors ${
+              className={`flex-1 py-4 px-6 rounded-lg font-semibold transition-all duration-300 ${
                 activeSection === 'protest'
-                  ? 'bg-white text-nepal-red shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'bg-white text-red-600 shadow-lg border-2 border-red-200 transform scale-105'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-white/50 hover:shadow-md'
               }`}
             >
-              <Camera className="w-5 h-5 inline mr-2" />
-              Protest Media
+              <Camera className="w-5 h-5 inline mr-3" />
+              {t('protests.protestMedia')}
             </button>
           </div>
 
           {/* Sub-tabs for Admin */}
           {isAdmin && (
-            <div className="flex space-x-1 mb-6 bg-gray-100 p-1 rounded-lg">
+            <div className="flex space-x-2 mb-8 bg-gradient-to-r from-slate-50 to-gray-100 p-2 rounded-xl shadow-inner">
               <button
                 onClick={() => setActiveTab('approved')}
-                className={`flex-1 py-2 px-4 rounded-md font-medium transition-colors ${
+                className={`flex-1 py-3 px-5 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'approved'
-                    ? 'bg-white text-nepal-red shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'bg-emerald-50 text-emerald-700 shadow-md border-2 border-emerald-200'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-white/50 hover:shadow-sm'
                 }`}
               >
                 <Eye className="w-4 h-4 inline mr-2" />
-                Approved ({activeSection === 'genz' ? genzApproved.length : protestApproved.length})
+                {t('protests.approved')} ({activeSection === 'genz' ? genzApproved.length : protestApproved.length})
               </button>
               <button
                 onClick={() => setActiveTab('pending')}
-                className={`flex-1 py-2 px-4 rounded-md font-medium transition-colors ${
+                className={`flex-1 py-3 px-5 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'pending'
-                    ? 'bg-white text-nepal-red shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'bg-amber-50 text-amber-700 shadow-md border-2 border-amber-200'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-white/50 hover:shadow-sm'
                 }`}
               >
                 <EyeOff className="w-4 h-4 inline mr-2" />
-                Pending ({activeSection === 'genz' ? genzPending.length : protestPending.length})
+                {t('protests.pending')} ({activeSection === 'genz' ? genzPending.length : protestPending.length})
               </button>
             </div>
           )}
 
+
           {/* Items List */}
-          <div className="card">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {activeSection === 'genz' ? 'GenZ Imposters' : 'Protest Media'}
-                </h2>
-                <p className="text-gray-600 mt-1">
-                  {activeSection === 'genz' 
-                    ? 'People who destroyed public properties while pretending to be GenZ protestors'
-                    : 'Photos and videos from the actual protests'
-                  }
-                </p>
-                {activeSection === 'genz' && (
-                  <div className="mt-4">
-                    <SocialShare 
-                      variant="compact"
-                      title="GenZ Imposters - September 8th Protests"
-                      description="These are the GenZ imposters who destroyed public properties. Report and share these people to expose the real culprits behind the violence."
-                    />
-                  </div>
-                )}
-              </div>
-              <div className="flex items-center space-x-2">
-                <button
-                  onClick={isAdmin ? loadAllItems : loadApprovedItems}
-                  disabled={loadingItems}
-                  className="flex items-center text-gray-600 hover:text-nepal-red transition-colors disabled:opacity-50"
-                >
-                  <RefreshCw className={`w-4 h-4 mr-1 ${loadingItems ? 'animate-spin' : ''}`} />
-                  Refresh
-                </button>
-                {isAdmin && (
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                    {activeSection === 'genz' ? t('protests.genzImposters') : t('protests.protestMedia')}
+                  </h2>
+                  <p className="text-gray-600 leading-relaxed">
+                    {activeSection === 'genz' 
+                      ? t('protests.genzDescription')
+                      : t('protests.protestDescription')
+                    }
+                  </p>
+                  {activeSection === 'genz' && (
+                    <div className="mt-4">
+                      <SocialShare 
+                        variant="compact"
+                        title={`${t('protests.genzImposters')} - ${t('protests.title')}`}
+                        description={t('protests.genzDescription')}
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-center space-x-3">
                   <button
-                    onClick={async () => {
-                      try {
-                        const response = await fetch('/api/protests/sep-8/debug/')
-                        const data = await response.json()
-                        console.log('Debug results:', data)
-                        alert('Check console for debug results')
-                      } catch (error) {
-                        console.error('Debug error:', error)
-                      }
-                    }}
-                    className="flex items-center text-blue-600 hover:text-blue-700 transition-colors text-sm"
+                    onClick={isAdmin ? loadAllItems : loadApprovedItems}
+                    disabled={loadingItems}
+                    className="flex items-center px-4 py-2 text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-200 disabled:opacity-50"
                   >
-                    🔍 Debug
+                    <RefreshCw className={`w-4 h-4 mr-2 ${loadingItems ? 'animate-spin' : ''}`} />
+                    {t('protests.refresh')}
                   </button>
-                )}
+                  {isAdmin && (
+                    <button
+                      onClick={async () => {
+                        try {
+                          const response = await fetch('/api/protests/sep-8/debug/')
+                          const data = await response.json()
+                          console.log('Debug results:', data)
+                          alert('Check console for debug results')
+                        } catch (error) {
+                          console.error('Debug error:', error)
+                        }
+                      }}
+                      className="flex items-center px-4 py-2 text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-all duration-200"
+                    >
+                      🔍 {t('protests.debug')}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
+            <div className="p-6">
 
             {loadingItems ? (
               <div className="text-center py-8">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-nepal-red mx-auto"></div>
-                <p className="mt-2 text-gray-600">Loading items...</p>
+                <p className="mt-2 text-gray-600">{t('common.loading')}</p>
               </div>
             ) : (
               <>
@@ -633,8 +701,8 @@ export default function ProtestsPage() {
                         </div>
                         <p className="text-gray-600">
                           {isAdmin && activeTab === 'pending' 
-                            ? 'No pending items to review'
-                            : 'No approved items available'
+                            ? t('protests.noPendingItems')
+                            : t('protests.noApprovedItems')
                           }
                         </p>
                       </div>
@@ -642,127 +710,158 @@ export default function ProtestsPage() {
                   }
 
                   return (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {items.map((item, index) => (
-                        <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                          {/* Image Preview for Images */}
-                          {item.contentType?.startsWith('image/') && (
-                            <div className="mb-3">
-                              <img
-                                src={item.url}
-                                alt={item.caption || 'Uploaded image'}
-                                className="w-full h-48 object-cover rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
-                                onClick={() => openImageGallery(items, index)}
-                                onError={(e) => {
-                                  // Hide image if it fails to load
-                                  e.currentTarget.style.display = 'none'
-                                }}
-                              />
-                            </div>
-                          )}
+                        <div 
+                          key={index} 
+                          className={`group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-nepal-red/20 transition-all duration-300 ${
+                            item.contentType?.startsWith('image/') ? 'cursor-pointer' : 'cursor-default'
+                          }`}
+                          onClick={() => {
+                            if (item.contentType?.startsWith('image/')) {
+                              openImageGallery(items, index)
+                            }
+                            // For videos, we don't want to open in new tab - let the video controls handle playback
+                          }}
+                        >
+                          {/* Media Preview */}
+                          <div className="relative">
+                            {item.contentType?.startsWith('image/') && (
+                              <div className="aspect-video overflow-hidden">
+                                <img
+                                  src={item.url}
+                                  alt={item.caption || 'Uploaded image'}
+                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                  onError={(e) => {
+                                    // Hide image if it fails to load
+                                    e.currentTarget.style.display = 'none'
+                                  }}
+                                />
+                              </div>
+                            )}
 
-                          {/* Video Preview for Videos */}
-                          {item.contentType?.startsWith('video/') && (
-                            <div className="mb-3">
-                              <video
-                                controls
-                                className="w-full max-h-64 rounded-lg"
-                                preload="metadata"
-                                style={{ aspectRatio: 'auto' }}
-                                onPlay={() => {
-                                  // Increment view count when video starts playing
-                                  incrementViewCount(item.pathname)
-                                }}
-                                onError={(e) => {
-                                  // Hide video if it fails to load and show fallback
-                                  const videoElement = e.currentTarget
-                                  videoElement.style.display = 'none'
-                                  const fallback = videoElement.nextElementSibling as HTMLElement
-                                  if (fallback) {
-                                    fallback.style.display = 'block'
-                                  }
-                                }}
-                              >
-                                <source src={item.url} type={item.contentType} />
-                                Your browser does not support the video tag.
-                              </video>
-                              <div 
-                                className="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500"
-                                style={{ display: 'none' }}
-                              >
-                                <div className="text-center">
-                                  <div className="text-4xl mb-2">🎥</div>
-                                  <p className="text-sm">Video preview unavailable</p>
-                                  <a 
-                                    href={item.url} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="text-nepal-red hover:underline text-sm mt-1 inline-block"
-                                  >
-                                    Download video
-                                  </a>
+                            {item.contentType?.startsWith('video/') && (
+                              <div className="aspect-video overflow-hidden relative">
+                                <video
+                                  controls
+                                  className="w-full h-full object-cover"
+                                  preload="metadata"
+                                  onClick={(e) => e.stopPropagation()}
+                                  onPlay={() => {
+                                    // Increment view count when video starts playing
+                                    incrementViewCount(item.pathname)
+                                  }}
+                                  onError={(e) => {
+                                    // Hide video if it fails to load and show fallback
+                                    const videoElement = e.currentTarget
+                                    videoElement.style.display = 'none'
+                                    const fallback = videoElement.nextElementSibling as HTMLElement
+                                    if (fallback) {
+                                      fallback.style.display = 'flex'
+                                    }
+                                  }}
+                                >
+                                  <source src={item.url} type={item.contentType} />
+                                  Your browser does not support the video tag.
+                                </video>
+                                <div 
+                                  className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-500"
+                                  style={{ display: 'none' }}
+                                >
+                                  <div className="text-center">
+                                    <div className="text-4xl mb-2">🎥</div>
+                                    <p className="text-sm font-medium">Video unavailable</p>
+                                  </div>
+                                </div>
+                                
+                                {/* Video Play Indicator */}
+                                <div className="absolute bottom-3 left-3">
+                                  <div className="bg-black/70 text-white px-2 py-1 rounded-md text-xs font-medium backdrop-blur-sm flex items-center">
+                                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                      <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                    Video
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          )}
-                          
-                          <div className="flex items-start justify-between mb-3">
-                            <div className="text-2xl">
-                              {getFileTypeIcon(item.contentType)}
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              {/* View Counter */}
-                              <div className="flex items-center text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                                <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                                {viewCounts[item.pathname] || 0}
-                              </div>
-                              <div className="text-xs text-gray-500">
-                                {formatFileSize(item.size)}
-                              </div>
-                              {isAdmin && activeTab === 'pending' && (
-                                <div className="flex space-x-1">
-                                  <button
-                                    onClick={() => handleApprove(item)}
-                                    className="p-1 text-green-600 hover:text-green-700 hover:bg-green-50 rounded"
-                                    title="Approve"
-                                  >
-                                    <Check className="w-4 h-4" />
-                                  </button>
-                                  <button
-                                    onClick={() => handleReject(item)}
-                                    className="p-1 text-red-600 hover:text-red-700 hover:bg-red-50 rounded"
-                                    title="Reject"
-                                  >
-                                    <X className="w-4 h-4" />
-                                  </button>
+                            )}
+
+                            {/* File Type Overlay - Only for images */}
+                            {item.contentType?.startsWith('image/') && (
+                              <div className="absolute top-3 left-3">
+                                <div className="bg-black/70 text-white px-2 py-1 rounded-md text-sm font-medium backdrop-blur-sm">
+                                  {getFileTypeIcon(item.contentType)}
                                 </div>
-                              )}
-                            </div>
+                              </div>
+                            )}
+
+                            {/* Admin Controls Overlay */}
+                            {isAdmin && activeTab === 'pending' && (
+                              <div className="absolute top-3 right-3 flex space-x-1">
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    handleApprove(item)
+                                  }}
+                                  className="bg-green-500/90 hover:bg-green-600 text-white p-1.5 rounded-md transition-colors backdrop-blur-sm"
+                                  title={t('protests.approve')}
+                                >
+                                  <Check className="w-4 h-4" />
+                                </button>
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    handleReject(item)
+                                  }}
+                                  className="bg-red-500/90 hover:bg-red-600 text-white p-1.5 rounded-md transition-colors backdrop-blur-sm"
+                                  title={t('protests.reject')}
+                                >
+                                  <X className="w-4 h-4" />
+                                </button>
+                              </div>
+                            )}
+
+                            {/* Hover Overlay - Only for images */}
+                            {item.contentType?.startsWith('image/') && (
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-3">
+                                    <Eye className="w-6 h-6 text-gray-700" />
+                                  </div>
+                                </div>
+                              </div>
+                            )}
                           </div>
                           
-                          <div className="mb-3">
-                            <p className="text-sm text-gray-600 mb-1">
-                              {formatDate(item.uploadedAt)}
-                            </p>
+                          {/* Content */}
+                          <div className="p-4">
+                            {/* Stats Row */}
+                            <div className="flex items-center justify-between mb-3">
+                              <div className="flex items-center space-x-3">
+                                {/* View Counter */}
+                                <div className="flex items-center text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                                  <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                  </svg>
+                                  {viewCounts[item.pathname] || 0}
+                                </div>
+                                <div className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                                  {formatFileSize(item.size)}
+                                </div>
+                              </div>
+                              <div className="text-xs text-gray-400">
+                                {formatDate(item.uploadedAt)}
+                              </div>
+                            </div>
+                            
+                            {/* Caption */}
                             {item.caption && (
-                              <p className="text-sm text-gray-800 line-clamp-2">
+                              <p className="text-sm text-gray-800 line-clamp-2 leading-relaxed">
                                 {item.caption}
                               </p>
                             )}
                           </div>
-                          
-                          <a
-                            href={item.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center text-nepal-red hover:text-red-700 text-sm font-medium"
-                          >
-                            <Eye className="w-4 h-4 mr-1" />
-                            {item.contentType?.startsWith('image/') ? 'View Full Size' : 'View'}
-                          </a>
                         </div>
                       ))}
                     </div>
@@ -770,25 +869,37 @@ export default function ProtestsPage() {
                 })()}
               </>
             )}
+            </div>
           </div>
 
           {/* Upload Section */}
-          <div className="card mt-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-              <Upload className="w-6 h-6 mr-2" />
-              Upload to {activeSection === 'genz' ? 'GenZ Imposters' : 'Protest Media'}
-            </h2>
-            <p className="text-gray-600 mb-6">
-              {activeSection === 'genz' 
-                ? 'Upload evidence of people who destroyed public properties while pretending to be GenZ protestors. Include photos, videos, or documents that show their actions.'
-                : 'Upload photos, videos, or documents from the actual September 8th protests. Show the real story of what happened.'
-              }
-            </p>
+          <div id="upload-section" className={`bg-white rounded-2xl shadow-lg border-2 border-dashed mt-8 transition-all duration-500 overflow-hidden ${
+            isUploadSectionVisible 
+              ? 'border-indigo-300 bg-gradient-to-br from-indigo-50 to-blue-50 shadow-xl' 
+              : 'border-gray-200 hover:border-indigo-200 hover:shadow-md'
+          }`}>
+            <div className="bg-gradient-to-r from-indigo-50 to-blue-50 px-6 py-6 border-b border-indigo-100">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 rounded-full mb-4">
+                  <Upload className="w-8 h-8 text-indigo-600" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  {t('protests.uploadTo')} {activeSection === 'genz' ? t('protests.genzImposters') : t('protests.protestMedia')}
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                  {activeSection === 'genz' 
+                    ? t('protests.uploadDescription')
+                    : t('protests.uploadDescriptionProtest')
+                  }
+                </p>
+              </div>
+            </div>
+            <div className="p-6">
             
             <form onSubmit={handleUpload} className="space-y-4">
               <div>
                 <label htmlFor="file" className="block text-sm font-medium text-gray-700 mb-2">
-                  Select File
+                  {t('protests.selectFile')}
                 </label>
                 <input
                   ref={fileInputRef}
@@ -808,13 +919,13 @@ export default function ProtestsPage() {
               
               <div>
                 <label htmlFor="caption" className="block text-sm font-medium text-gray-700 mb-2">
-                  Caption (Optional)
+                  {t('protests.caption')}
                 </label>
                 <textarea
                   id="caption"
                   value={caption}
                   onChange={(e) => setCaption(e.target.value)}
-                  placeholder="Add a description or context for this upload..."
+                  placeholder={t('protests.captionPlaceholder')}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-nepal-red focus:border-transparent"
                   rows={3}
                 />
@@ -840,20 +951,21 @@ export default function ProtestsPage() {
                 {uploading ? (
                   <>
                     <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
-                    Uploading...
+                    {t('protests.uploading')}
                   </>
                 ) : (
                   <>
                     <Upload className="w-4 h-4 mr-2" />
-                    Upload File
+                    {t('protests.uploadFile')}
                   </>
                 )}
               </button>
             </form>
+            </div>
             
             <div className="mt-6 pt-6 border-t border-gray-200">
               <p className="text-sm text-gray-500 text-center">
-                All uploads are reviewed before being made public. 
+                {t('protests.uploadReview')}
                 <br />
                 You can also use our{' '}
                 <a
@@ -862,9 +974,9 @@ export default function ProtestsPage() {
                   rel="noopener noreferrer"
                   className="text-nepal-red hover:underline"
                 >
-                  Google Form
+                  {t('protests.googleForm')}
                 </a>{' '}
-                for alternative submission.
+                {t('protests.alternativeSubmission')}
               </p>
             </div>
           </div>
@@ -891,8 +1003,8 @@ export default function ProtestsPage() {
       {/* Floating Share Button */}
       <SocialShare 
         variant="floating"
-        title="September 8th Protests - Nepal"
-        description="Documenting the truth about the protests and those who tried to exploit them. Help us expose the real story."
+        title={`${t('protests.title')} - Nepal`}
+        description={t('protests.description')}
       />
 
       {/* Image Gallery Modal */}
