@@ -31,8 +31,8 @@ export default function SocialShare({
     : "Jhappad.com - A Slap to Corruption in Nepal"
   
   const defaultDescription = language === 'ne'
-    ? "नेपालमा भ्रष्टाचारको विरुद्ध आन्दोलनमा सामेल हुनुहोस्। भ्रष्ट राजनीतिज्ञ र उनीहरूका सन्तानहरूको विलासी जीवनशैली ट्र्याक गर्नुहोस्।"
-    : "Join the movement against corruption in Nepal. Track corrupt politicians and their children's lavish lifestyles."
+    ? "नेपालमा भ्रष्टाचारको विरुद्ध आन्दोलनमा सामेल हुनुहोस्। भ्रष्ट राजनीतिज्ञ र उनीहरूका परिवारहरूको विलासी जीवनशैली ट्र्याक गर्नुहोस्।"
+    : "Join the movement against corruption in Nepal. Track corrupt politicians and their family's lavish lifestyles."
 
   // Use current page URL if not provided
   const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '')

@@ -56,7 +56,7 @@ Follow the same process but use a branch name like `update-[politician-name]` an
 - **At least one source**
 
 ### Optional but Valuable Information
-- **Photos** (politician and children)
+- **Photos** (politician and family members)
 - **Education details** (institution, cost, country)
 - **Luxury items and recent purchases**
 - **Business interests and ownership**

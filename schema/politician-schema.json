@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "title": "Nepali Politician Data Schema",
-  "description": "Schema for tracking corrupt Nepali politicians and their children",
+  "description": "Schema for tracking corrupt Nepali politicians and their family",
   "required": ["id", "name", "position", "party", "children"],
   "properties": {
     "id": {

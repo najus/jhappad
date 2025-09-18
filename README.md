@@ -1,17 +1,17 @@
 # Corrupt Nepali 🇳🇵
 
-A collaborative platform to track corrupt Nepali politicians and their children, promoting transparency and accountability in Nepali politics.
+A collaborative platform to track corrupt Nepali politicians and their family, promoting transparency and accountability in Nepali politics.
 
 ## 🎯 Mission
 
-This platform aims to expose corruption by documenting the lavish lifestyles of politicians' children, their expensive education abroad, luxury purchases, and business interests that often exceed their declared family income.
+This platform aims to expose corruption by documenting the lavish lifestyles of politicians' family members, their expensive education abroad, luxury purchases, and business interests that often exceed their declared family income.
 
 ## 🚀 Features
 
-- **Comprehensive Database**: Track politicians, their children, and corruption allegations
+- **Comprehensive Database**: Track politicians, their family members, and corruption allegations
 - **Lifestyle Documentation**: Record luxury items, recent splurges, and expensive education
-- **Business Interests**: Document children's business ownership and positions
-- **Social Media Links**: Connect to children's social media profiles for evidence
+- **Business Interests**: Document family members' business ownership and positions
+- **Social Media Links**: Connect to family members' social media profiles for evidence
 - **Source Attribution**: All information backed by credible sources
 - **Collaborative**: Easy for contributors to add new information via pull requests
 

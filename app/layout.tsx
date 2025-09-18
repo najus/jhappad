@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Jhappad.com - A Slap to Corruption in Nepal',
-  description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children who spend taxpayers money on their personal luxuries',
+  description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their family who spend taxpayers money on their personal luxuries',
   keywords: ['nepal', 'corruption', 'transparency', 'accountability', 'politics', 'jhappad', 'slap'],
   authors: [{ name: 'Jhappad.com Contributors' }],
   icons: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Jhappad.com - A Slap to Corruption in Nepal',
-    description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children who spend taxpayers money on their personal luxuries',
+    description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their family who spend taxpayers money on their personal luxuries',
     type: 'website',
     url: 'https://jhappad.com',
     siteName: 'Jhappad.com',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Jhappad.com - A Slap to Corruption in Nepal',
-    description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their children who spend taxpayers money on their personal luxuries',
+    description: 'A collective SLAP to corruption in Nepal. We are ordinary Nepali people uniting against corrupt politicians and their family who spend taxpayers money on their personal luxuries',
     images: ['https://via.placeholder.com/1200x630/DC143C/FFFFFF?text=Jhappad.com+-+A+Slap+to+Corruption+in+Nepal'],
     creator: '@jhappad',
   },
