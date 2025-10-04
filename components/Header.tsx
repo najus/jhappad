@@ -45,6 +45,12 @@ export default function Header() {
             >
               🚨 {t('nav.protests')}
             </a>
+            <a
+              href="/memorial"
+              className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors border border-gray-300"
+            >
+              🕯️ Memorial
+            </a>
             <LanguageSwitcher />
           </nav>
 
@@ -83,6 +89,13 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 🚨 {t('nav.protests')}
+              </a>
+              <a
+                href="/memorial"
+                className="bg-gray-100 text-gray-700 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition-colors text-center border border-gray-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                🕯️ Memorial
               </a>
               {/* Language Switcher - More prominent in mobile */}
               <div className="py-2 border-t border-gray-200 mt-2">

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Search, Users, DollarSign, Calendar, ExternalLink, Github, Share2, AlertTriangle, Camera, TrendingUp, Shield, Eye } from 'lucide-react'
+import { Search, Users, DollarSign, Calendar, ExternalLink, Github, Share2, AlertTriangle, Camera, TrendingUp, Shield, Eye, Heart } from 'lucide-react'
 import PoliticianCard from '@/components/PoliticianCard'
 import Header from '@/components/Header'
 import SocialShare from '@/components/SocialShare'
@@ -95,23 +95,47 @@ export default function Home() {
               {t('home.description')}
             </p>
             
-            {/* Primary CTA */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+            {/* Main Action Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
               <a
                 href="https://forms.gle/w7jEJtD2HSrgDNcw5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-nepal-red to-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-gradient-to-br from-nepal-red to-red-600 text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                <AlertTriangle className="w-4 h-4 mr-2" />
-                Report Corruption
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                    <AlertTriangle className="w-4 h-4" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Report Corruption</h3>
+                  <p className="text-red-100 text-sm">Share evidence and help expose corruption</p>
+                </div>
               </a>
+              
               <a
                 href="/protests/sep-8"
-                className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-orange-500 hover:to-red-500 transition-all duration-200 inline-flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="group bg-gradient-to-br from-amber-500 to-orange-500 text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                <Camera className="w-4 h-4 mr-2" />
-                View Protests
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                    <Camera className="w-4 h-4" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">View Protests</h3>
+                  <p className="text-amber-100 text-sm">See evidence from September 8th protests</p>
+                </div>
+              </a>
+              
+              <a
+                href="/memorial"
+                className="group bg-gradient-to-br from-gray-600 to-gray-700 text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                    <Heart className="w-4 h-4" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Memorial</h3>
+                  <p className="text-gray-200 text-sm">Remembering those who lost their lives</p>
+                </div>
               </a>
             </div>
             
@@ -123,8 +147,14 @@ export default function Home() {
               />
             </div>
             
-            {/* Compact Stats */}
-            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+          </div>
+        </div>
+
+        {/* Politicians Section */}
+        <div id="politicians" className="py-8">
+          <div className="text-center mb-6">
+            {/* Politicians Stats */}
+            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-6">
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
                 <div className="text-2xl font-bold text-gray-900 mb-1">{totalPoliticians}</div>
                 <div className="text-sm text-gray-600 font-medium">{t('home.stats.politicians')}</div>
@@ -138,51 +168,6 @@ export default function Home() {
                 <div className="text-sm text-gray-600 font-medium">{t('home.stats.wealth')}</div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Quick Navigation */}
-        <div className="py-8 bg-white/30 backdrop-blur-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <a
-              href="#politicians"
-              className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:border-nepal-red/30"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-nepal-red/10 rounded-full group-hover:bg-nepal-red/20 transition-colors">
-                  <Shield className="w-8 h-8 text-nepal-red" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{t('home.corruptPoliticians')}</h3>
-                  <p className="text-gray-600 text-sm">{t('home.browsePoliticians').replace('{count}', totalPoliticians.toString())}</p>
-                </div>
-              </div>
-            </a>
-            
-            <a
-              href="/protests/sep-8"
-              className="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 hover:border-amber-400/30"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-amber-100 rounded-full group-hover:bg-amber-200 transition-colors">
-                  <Camera className="w-8 h-8 text-amber-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{t('home.septemberProtests')}</h3>
-                  <p className="text-gray-600 text-sm">{t('home.evidenceGenZ')}</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        {/* Politicians Grid */}
-        <div id="politicians" className="py-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('home.corruptPoliticians')}</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-              {t('home.browseDatabase')}
-            </p>
             
             {/* Inline Search */}
             <div className="relative max-w-2xl mx-auto px-4">

@@ -11,6 +11,7 @@ interface SocialShareProps {
   politicianName?: string
   className?: string
   variant?: 'default' | 'compact' | 'floating'
+  isMemorial?: boolean
 }
 
 export default function SocialShare({ 
@@ -19,7 +20,8 @@ export default function SocialShare({
   description,
   politicianName,
   className = "",
-  variant = "default"
+  variant = "default",
+  isMemorial = false
 }: SocialShareProps) {
   const [copied, setCopied] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -37,14 +39,14 @@ export default function SocialShare({
   // Use current page URL if not provided
   const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '')
   
-  const finalTitle = politicianName 
+  const finalTitle = title || (politicianName 
     ? `${politicianName} - ${defaultTitle}` 
-    : defaultTitle
-  const finalDescription = politicianName 
+    : defaultTitle)
+  const finalDescription = description || (politicianName 
     ? (language === 'ne' 
         ? `${politicianName} को भ्रष्टाचार विवरण झाप्पड.कममा हेर्नुहोस्`
         : `Check out ${politicianName}'s corruption details on Jhappad.com`)
-    : defaultDescription
+    : defaultDescription)
 
   const handleCopyLink = async () => {
     try {
@@ -56,10 +58,15 @@ export default function SocialShare({
     }
   }
 
+  // Use respectful messaging for memorial content
+  const shareText = isMemorial 
+    ? `${finalTitle} - ${finalDescription}`
+    : finalTitle
+
   const shareLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(finalDescription)}`,
-    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(finalTitle)}&url=${encodeURIComponent(shareUrl)}`,
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(`${finalTitle} ${shareUrl}`)}`,
+    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`,
   }
 
   if (variant === 'floating') {
