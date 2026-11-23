@@ -13,12 +13,51 @@
       "Also previously linked to the Lalita Niwas land-grab investigation involving land brokers and political collusion."
     ],
     "children": [],
-    "lastUpdated": "2025-09-08",
+    "lastUpdated": "2026-11-16",
     "sources": [
       "https://en.wikipedia.org/wiki/Madhav_Kumar_Nepal",
       "https://www.myrepublica.nagariknetwork.com/news/madhav-nepal-becomes-first-former-pm-to-be-indicted-by-ciaa-for-corruption-69-61.html",
-      "https://asianatimes.com/former-pms-under-scrutiny-nepal-land-grab-probe/"
-    ]
+      "https://asianatimes.com/former-pms-under-scrutiny-nepal-land-grab-probe/",
+      "https://jawafdehi.org/case/case-081-cr-0107-patanjali"
+    ],
+    "jawafdehi": {
+      "entityIri": "https://jawafdehi.org/entity/person/madhava-kumara-nepala-107c8a",
+      "nameEn": "Madhav Kumar Nepal",
+      "nameNe": "माधव कुमार नेपाल",
+      "photoCredit": null,
+      "caseCount": 1,
+      "totalBigoNpr": 185850000,
+      "cases": [
+        {
+          "slug": "case-081-cr-0107-patanjali",
+          "title": "पतञ्जली योगपीठ तथा आयुर्वेद कम्पनी  विरू्द्ध जग्गा खिचाेला तथा भष्टचारकाे मुद्धा  (081-CR-0107)",
+          "url": "https://jawafdehi.org/case/case-081-cr-0107-patanjali",
+          "caseType": "CORRUPTION",
+          "status": "ongoing",
+          "bigoNpr": 185850000,
+          "bigoFormatted": "Rs 18.59 crore (Rs 18,58,50,000)",
+          "role": "accused",
+          "outcome": "charged",
+          "keyAllegations": [
+            "पतञ्जली योगपीठ तथा आयुर्वेद कम्पनी नेपाल, मालपोत, गुठी संस्थान, बैंक तथा उच्च तहका पदाधिकारीहरूको सक्रिय संलग्नता र  मिलेमतोमा भूमि सम्बन्धी ऐन, २०२१ द्वारा तोकिएको हदबन्दी उल्लङ्घन गर्दै ठूलो परिमाणमा जग्गा गैरकानूनी रूपमा खरिद, दर्ता, धितो र बिक्री गरिएको",
+            "पतञ्जली कम्पनीले कानूनी सीमा (७५ रोपनी) भन्दा धेरै ५५० रोपनीभन्दा बढी जग्गा खरिद गरेकाे र मालपोत कार्यालयका कर्मचारीहरूले जानकारी हुँदाहुँदै पनि लिखत पारित , गुठी जग्गामा मोहियानी हकको दुरुपयोग  तथा हदबन्दी छुटको प्रक्रिया दुरुपयोग गरेकाे ।",
+            "हदभन्दा बढी र जफत हुनुपर्ने प्रकृतिको जग्गालाई धितो राखी बैंकबाट कर्जा प्रवाह गरिएको, व्यवसायिक योजना बिना, गलत मूल्याङ्कनको आधारमा कर्जा स्वीकृत गरिएकाे ।",
+            "कम्पनीको गैरकानूनी दर्ता, गलत सिफारिस, ; गम्भिर सम्सया अाएकाे खण्डमा (सामान्य नियमले काम गर्न नसक्ने असहज र जटिल परिस्थितिमा राज्यलाइ जे गर्दा कम छेती हुने प्रकियाकाे अवलम्बन गर्ने  शिद्धान्त) “Doctrine of Necessity” को दुरुपयोग, तथा विरोधाभासी मन्त्रिपरिषद् निर्णयहरूले नीतिगत तहबाटै कानून उल्लङ्घन गरी सार्वजनिक सम्पत्ति निजीकरण गरिएको, जफत भई सरकारी सार्वजनिक हुनुपर्ने जग्गालाई मन्त्रिपरिषद् तथा उच्च पदाधिकारीहरूको प्रभाव र दबाबमा सट्टापट्टा तथा बिक्री गर्न अनुमति दिई निजी लाभमा प्रयोग गरिएको"
+          ],
+          "latestDevelopment": {
+            "date": "2025-06-05",
+            "dateBs": "2082-02-22",
+            "title": "विशेष अदालतमा मुद्दा दर्ता"
+          },
+          "courtCases": [
+            "https://jawafdehi.org/courtcase/special/081-cr-0107"
+          ],
+          "caseUpdatedAt": "2026-11-16T09:49:23.810795+05:45"
+        }
+      ],
+      "attribution": "Case data: Jawafdehi Initiative (jawafdehi.org), CC BY-NC 4.0",
+      "syncedAt": "2026-11-23T19:10:33.168Z"
+    }
   },
   {
     "id": "politician-004",
@@ -83,13 +122,74 @@
         ]
       }
     ],
-    "lastUpdated": "2025-09-08",
+    "lastUpdated": "2026-11-16",
     "sources": [
       "https://english.ratopati.com/story/39049",
       "https://english.pardafas.com/prachanda-accuses-government-of-deepening-corruption-amid-national-crisis/",
       "https://laganinews.com/en/2025/07/14/chairman-prachanda-expresses-serious-concern-over-money-laundering-corruption-probe-undermined-2/",
-      "https://mypeoplesreview.com/2023/08/23/pm-intends-to-weaken-smuggling-other-scams/"
-    ]
+      "https://mypeoplesreview.com/2023/08/23/pm-intends-to-weaken-smuggling-other-scams/",
+      "https://jawafdehi.org/case/budhigandaki-hydropower-projec-77f597",
+      "https://jawafdehi.org/case/maoist-combatant-cantonment-co-9095fa"
+    ],
+    "jawafdehi": {
+      "entityIri": "https://jawafdehi.org/entity/person/pushpa-kamal-dahal-prachanda",
+      "nameEn": "Pushpa Kamal Dahal (\"Prachanda\")",
+      "nameNe": "Pushpa Kamal Dahal (\"Prachanda\")",
+      "photoCredit": "Pushpa Kamal Dahal, US Embassy Nepal, via Wikimedia Commons. Cropped.",
+      "caseCount": 2,
+      "totalBigoNpr": 13000000000,
+      "cases": [
+        {
+          "slug": "budhigandaki-hydropower-projec-77f597",
+          "title": "Budhigandaki Hydropower Project: Allegation of 9 Billion NPR Corruption",
+          "url": "https://jawafdehi.org/case/budhigandaki-hydropower-projec-77f597",
+          "caseType": "CORRUPTION",
+          "status": "others",
+          "bigoNpr": 9000000000,
+          "bigoFormatted": "Rs 9 arba (Rs 9,00,00,00,000)",
+          "role": "related",
+          "outcome": null,
+          "keyAllegations": [
+            "Direct award of the Budhi Gandaki Hydropower Project to China Gezhouba Group Corporation (CGGC) without an open and competitive bidding process.",
+            "Alleged irregularities in land acquisition and compensation payments, including unfair valuation, financial mismanagement, and procedural weaknesses.",
+            "Alleged payment of NPR 9 billion in commission during the contract award process, as claimed by former Prime Minister Baburam Bhattarai."
+          ],
+          "latestDevelopment": {
+            "date": "2022-10-15",
+            "dateBs": "2079-06-29",
+            "title": "Baburam Bhattarai retracts the allegation, saying it was based on \"unconfirmed information\""
+          },
+          "courtCases": [],
+          "caseUpdatedAt": "2026-11-16T09:49:24.473153+05:45"
+        },
+        {
+          "slug": "maoist-combatant-cantonment-co-9095fa",
+          "title": "माओवादी लडाकु शिविर प्रकरण",
+          "url": "https://jawafdehi.org/case/maoist-combatant-cantonment-co-9095fa",
+          "caseType": "CORRUPTION",
+          "status": "ongoing",
+          "bigoNpr": 4000000000,
+          "bigoFormatted": "Rs 4 arba (Rs 4,00,00,00,000)",
+          "role": "related",
+          "outcome": null,
+          "keyAllegations": [
+            "हुदै नभएका वा शिविर छाडिसकेका लडाकुका नाममा तलब, भत्ता र रासनको रकम निकासा गरिएको।",
+            "बढी रकम प्राप्त गर्न लडाकुको संख्या बढाइचढाइ देखाइएको, उजुरीअनुसार वास्तविक संख्या ७-८ हजार हुँदा करिब ३५ हजार देखाइएको।",
+            "शिविर व्यवस्थापनमा छुट्याइएको रकमबाट कम्तीमा रु. ४ अर्ब हिनामिना भएको।",
+            "राजनीतिक प्रभावका कारण अख्तियारको छानबिन अघि बढ्न नसकी उजुरी तामेलीमा राखिएको।"
+          ],
+          "latestDevelopment": {
+            "date": "2025-09-30",
+            "dateBs": "2082-06-14",
+            "title": "उजुरी तामेलीमा"
+          },
+          "courtCases": [],
+          "caseUpdatedAt": "2026-11-16T09:49:24.528438+05:45"
+        }
+      ],
+      "attribution": "Case data: Jawafdehi Initiative (jawafdehi.org), CC BY-NC 4.0",
+      "syncedAt": "2026-11-23T19:10:37.235Z"
+    }
   },
   {
     "id": "politician-002",
@@ -104,10 +204,103 @@
       "Suspended from Parliament following charges; granted bail (NPR 2.5 million)."
     ],
     "children": [],
-    "lastUpdated": "2025-09-08",
+    "lastUpdated": "2026-11-16",
     "sources": [
-      "https://en.wikipedia.org/wiki/Mohan_Bahadur_Basnet"
-    ]
+      "https://en.wikipedia.org/wiki/Mohan_Bahadur_Basnet",
+      "https://jawafdehi.org/case/case-081-cr-0060-681d9859",
+      "https://jawafdehi.org/case/case-081-cr-0044-a72c082d",
+      "https://jawafdehi.org/case/teramocs-081-cr-0095-32c84510"
+    ],
+    "jawafdehi": {
+      "entityIri": "https://jawafdehi.org/entity/person/mohan-bahadur-basnet-334834",
+      "nameEn": "Mohan Bahadur Basnet",
+      "nameNe": "मोहन बहादुर बस्नेत",
+      "photoCredit": "Mohan Bahadur Basnet by Gunjan Raj Giri, via Wikimedia Commons, CC BY-SA 4.0. Cropped.",
+      "caseCount": 3,
+      "totalBigoNpr": 3397610320,
+      "cases": [
+        {
+          "slug": "case-081-cr-0060-681d9859",
+          "title": "नागार्जुन नगरपालिकाका मेयर मोहन बहादुर बस्नेतविरुद्ध गैरकानूनी सम्पत्ति आर्जन मुद्दा (081-CR-0060)",
+          "url": "https://jawafdehi.org/case/case-081-cr-0060-681d9859",
+          "caseType": "CORRUPTION",
+          "status": "ongoing",
+          "bigoNpr": 86987106,
+          "bigoFormatted": "Rs 8.70 crore (Rs 8,69,87,106)",
+          "role": "accused",
+          "outcome": "acquitted",
+          "keyAllegations": [
+            "नागार्जुन नगरपालिकाका नगर प्रमुखको रूपमा सार्वजनिक पद धारण गरेपछि मोहन बहादुर बस्नेतले बागमती प्रदेश सरकारको मुख्यमन्त्री तथा मन्त्रिपरिषद्को कार्यालयमा पेस गर्नुपर्ने सम्पत्ति विवरणमा झुट्ठा र अपूर्ण विवरण पेस गरेको।",
+            "अख्तियारको २०८१/१०/२७ को प्रेस विज्ञप्तिअनुसार जाँच अवधिमा मोहन बहादुर बस्नेत र उनका एकाघर परिवारको कूल आय रु. १९,९५,७४,८६२.२५ र कूल खर्च/लगानी रु. २८,६५,६१,९६७.९४ देखिएको भन्दै रु. ८,६९,८७,१०५.६९ बराबरको स्रोत नखुलेको सम्पत्ति रहेको आरोप लगाइएको ।",
+            "उर्मिला बस्नेतलाई उनका नाममा रहेको नगद तथा घरजग्गा जफत प्रयोजनका लागि प्रतिवादी बनाइएको ।"
+          ],
+          "latestDevelopment": {
+            "date": "2025-06-20",
+            "dateBs": "2082-03-06",
+            "title": "फैसला: सफाई"
+          },
+          "courtCases": [
+            "https://jawafdehi.org/courtcase/special/081-cr-0060",
+            "https://jawafdehi.org/courtcase/supreme/082-cr-1781"
+          ],
+          "caseUpdatedAt": "2026-11-16T09:49:23.782297+05:45"
+        },
+        {
+          "slug": "case-081-cr-0044-a72c082d",
+          "title": "जगतगुरु कृपालु प्रतिष्ठानमा भएकाे भ्रष्टचार:  नागार्जुन नगरपालिकाका नगर प्रमुख समेत विरूद्ध भ्रष्टाचार तथा सम्पत्ति शुद्धीकरणकाे मुद्धा  (081-CR-0044)",
+          "url": "https://jawafdehi.org/case/case-081-cr-0044-a72c082d",
+          "caseType": "CORRUPTION",
+          "status": "ongoing",
+          "bigoNpr": 92246032,
+          "bigoFormatted": "Rs 9.22 crore (Rs 9,22,46,032)",
+          "role": "accused",
+          "outcome": "charged",
+          "keyAllegations": [
+            "प्रतिवादी मोहनबहादुर बस्नेतले नगर प्रमुख पदको दुरुपयोग गरी पद्मा कम्पनीहरू र राजु प्रसाद कँडेललाई अनुचित लाभ पुर्‍याउँदै कर छुट, जग्गा उपलब्धता र अन्य सहजीकरण गरेका र सो बापत करिब रु. ९.२२ करोड घुस/रिसवत लिई उक्त रकमलाई पछि सम्पत्ति शुद्धीकरणमार्फत वैध बनाएको आरोप ।",
+            "मोहनबहादुर बस्नेतले नगर प्रमुखको अधिकार प्रयोग गरी- कर छुट दिने, विदेशी सहायता सिफारिस गर्ने, जग्गा उपलब्ध गराउने जस्ता कार्य गरी निजी कम्पनीलाई अनुचित लाभ दिलाएको ।",
+            "प्रतिवादीहरूले नगद, जग्गा (करिब रु. ६.८२ करोड), विवाह खर्च लगायत मार्फत कुल रु. ९,२२,४६,०३२.३३ बराबर घुस लेनदेन गरेको",
+            "घुसबाट प्राप्त रकमलाई बैंक कारोबार ,जग्गा किनबेच ,घर निर्माण, ऋण भुक्तानी मार्फत रूपान्तरण गरी करिब रु. १३.१२ करोड बराबर सम्पत्ति वैध देखाउने प्रयास गरेकाे ।"
+          ],
+          "latestDevelopment": {
+            "date": "2025-06-30",
+            "dateBs": "2082-03-16",
+            "title": "विशेष अदालतबाट सजाय निर्धारण"
+          },
+          "courtCases": [
+            "https://jawafdehi.org/courtcase/supreme/082-cr-1782"
+          ],
+          "caseUpdatedAt": "2026-11-16T09:49:23.980064+05:45"
+        },
+        {
+          "slug": "teramocs-081-cr-0095-32c84510",
+          "title": "टेरामक्स (TERAMOCS) खरिदमा भ्रष्टाचार मुद्दा  (081-CR-0095)",
+          "url": "https://jawafdehi.org/case/teramocs-081-cr-0095-32c84510",
+          "caseType": "CORRUPTION",
+          "status": "ongoing",
+          "bigoNpr": 3218377182,
+          "bigoFormatted": "Rs 3.22 arba (Rs 3,21,83,77,182)",
+          "role": "accused",
+          "outcome": "acquitted",
+          "keyAllegations": [
+            "दूरसञ्चार सेवा प्रदायकहरूको नेटवर्कबाट हुने राष्ट्रिय तथा अन्तर्राष्ट्रिय कलको मापन गरी राजस्व चुहावटको निगरानीका लागि भन्दै नेपाल दूरसञ्चार प्राधिकरणले टेलिकम्युनिकेसन ट्राफिक मोनिटरिङ एन्ड फ्रड कन्ट्रोल सिस्टम (टेरामक्स) स्थापना गर्ने गरी लिएको नीति अन्तर्गत तत्कालीन सञ्चार मन्त्री मोहन बहादुर बस्नेतले क्षेत्राधिकार बाहिर गई  Telecommunication Traffic Monitoring and Fraud Control System (TERAMOCS) टेरामक्स  कार्यक्रम समावेश गर्न गैरकानूनी निर्देशन दिएको, दूरसञ्चार प्राधिकरणमा विचारधीन रही बजेट तथा कार्यक्रममा समावेश गर्ने निर्णय नै नभएको अवस्थामा टेरामक्स सञ्चालन गर्ने भन्ने कार्यक्रम राखेर मन्त्री बस्नेतले पदीय दुरूपयोग गरेको,उनको उक्त निर्णय नेपाल दूरसञ्चार नियमावली २०५४ को दफा ३४ (ग)को आशय विपरीत हुन आउने ।",
+            "नेपाल दूरसञ्चार प्राधिकरणका पदाधिकारीहरूले सार्वजनिक खरिद ऐन र नियमावली विपरीत परामर्शदाता छनौट गरी राज्यलाई रु. ३,२१,८३,७७,१८२ हानिनोक्सानी पुर्याएको।",
+            "योग्यता नपुग्ने Vanrise Solutions SAL लाई छनौट गरी कानुन विपरीत मालसामान खरिद गरेको।",
+            "सर्वोच्च अदालतको आदेशको प्रतिकूल हुने गरी नागरिकको व्यक्तिगत सूचनामा पहुँच पुग्ने संरचना अनधिकृत तवरमा स्थापना गर्न खोजेको।"
+          ],
+          "latestDevelopment": {
+            "date": "2026-07-06",
+            "dateBs": "2083-03-22",
+            "title": "विशेष अदालतको फैसला"
+          },
+          "courtCases": [
+            "https://jawafdehi.org/courtcase/special/081-cr-0095"
+          ],
+          "caseUpdatedAt": "2026-11-16T09:49:24.040387+05:45"
+        }
+      ],
+      "attribution": "Case data: Jawafdehi Initiative (jawafdehi.org), CC BY-NC 4.0",
+      "syncedAt": "2026-11-23T19:10:42.402Z"
+    }
   },
   {
     "id": "politician-003",
@@ -271,7 +464,7 @@
         }
       ],
       "attribution": "Case data: Jawafdehi Initiative (jawafdehi.org), CC BY-NC 4.0",
-      "syncedAt": "2026-11-23T19:02:28.017Z"
+      "syncedAt": "2026-11-23T19:10:47.755Z"
     }
   },
   {
@@ -434,7 +627,7 @@
         }
       ],
       "attribution": "Case data: Jawafdehi Initiative (jawafdehi.org), CC BY-NC 4.0",
-      "syncedAt": "2026-11-23T19:02:30.252Z"
+      "syncedAt": "2026-11-23T19:10:52.100Z"
     },
     "_draft": "Created by sync-jawafdehi-poc — position/party are manual placeholders, verify before publishing"
   }

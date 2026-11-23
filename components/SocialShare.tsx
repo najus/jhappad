@@ -121,7 +121,7 @@ export default function SocialShare({
           
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="bg-nepal-red text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-200 hover:scale-110"
+            className="bg-nepal-red text-white p-3 rounded-sm hover:bg-red-800 transition-colors"
             aria-label="Share"
           >
             <Share2 className="w-5 h-5" />

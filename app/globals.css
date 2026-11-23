@@ -4,63 +4,69 @@
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+  body {
+    @apply bg-paper text-ink antialiased;
   }
 }
 
 @layer components {
+  /* Print-editorial sheet: flat, hairline-ruled, no shadow */
   .card {
-    @apply bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6;
+    @apply bg-white rounded-sm border border-hairline p-4 sm:p-6;
   }
-  
+
   .btn-primary {
-    @apply bg-nepal-red text-white px-4 py-3 rounded-md hover:bg-red-700 transition-colors font-medium text-sm sm:text-base min-h-[44px] flex items-center justify-center;
+    @apply bg-nepal-red text-white px-4 py-3 rounded-sm hover:bg-red-800 transition-colors font-medium text-sm sm:text-base min-h-[44px] flex items-center justify-center;
   }
-  
+
   .btn-secondary {
-    @apply bg-gray-200 text-gray-800 px-4 py-3 rounded-md hover:bg-gray-300 transition-colors font-medium text-sm sm:text-base min-h-[44px] flex items-center justify-center;
+    @apply bg-transparent text-ink border border-ink/30 px-4 py-3 rounded-sm hover:border-nepal-red hover:text-nepal-red transition-colors font-medium text-sm sm:text-base min-h-[44px] flex items-center justify-center;
   }
-  
+
   .btn-touch {
     @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
-  
+
   .text-responsive {
     @apply text-sm sm:text-base;
   }
-  
+
   .heading-responsive {
     @apply text-lg sm:text-xl md:text-2xl;
   }
-  
+
   .container-responsive {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
-  /* Enhanced glassmorphism effects */
+
+  /* Legacy utility names kept for other pages, restyled flat */
   .glass-card {
-    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20;
+    @apply bg-white rounded-sm border border-hairline;
   }
-  
+
   .glass-card-hover {
-    @apply hover:bg-white/90 hover:shadow-xl transition-all duration-300;
+    @apply hover:border-nepal-red/50 transition-colors duration-200;
   }
-  
-  /* Gradient text */
+
   .gradient-text {
-    @apply bg-gradient-to-r from-nepal-red to-red-600 bg-clip-text text-transparent;
+    @apply text-nepal-red;
   }
-  
-  /* Enhanced button styles */
+
   .btn-gradient {
-    @apply bg-gradient-to-r from-nepal-red to-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+    @apply bg-nepal-red text-white px-6 py-3 rounded-sm font-semibold hover:bg-red-800 transition-colors duration-200;
   }
-  
+
   .btn-gradient-secondary {
-    @apply bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-orange-500 hover:to-red-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+    @apply bg-nepal-blue text-white px-6 py-3 rounded-sm font-semibold hover:bg-blue-900 transition-colors duration-200;
   }
-  
-  /* Line clamp utility */
+
+  /* Ruled ledger cell used for stats */
+  .ledger-cell {
+    @apply border-t-2 border-ink pt-3;
+  }
+
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;

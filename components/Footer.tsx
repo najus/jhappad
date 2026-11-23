@@ -7,20 +7,23 @@ export default function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-ink text-paper">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <Flag className="w-6 h-6 text-nepal-red" />
-              <h3 className="text-xl font-bold">{t('home.title')}</h3>
+              <h3 className="font-display text-xl font-bold">{t('home.title')}</h3>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-paper/70 mb-4 max-w-md">
               {t('home.subtitle')}
             </p>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-paper/50">
               {t('footer.description')}
+            </p>
+            <p className="text-sm text-paper/50 mt-4">
+              Court &amp; CIAA case data: <a href="https://jawafdehi.org" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">Jawafdehi Initiative</a>, CC BY-NC 4.0.
             </p>
           </div>
 
@@ -31,7 +34,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-paper/70 hover:text-white transition-colors"
                 >
                   {t('nav.home')}
                 </a>
@@ -39,7 +42,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/about"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-paper/70 hover:text-white transition-colors"
                 >
                   {t('nav.about')}
                 </a>
@@ -47,7 +50,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/contribute"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-paper/70 hover:text-white transition-colors"
                 >
                   {t('nav.contribute')}
                 </a>
@@ -55,7 +58,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/protests/sep-8"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-paper/70 hover:text-white transition-colors"
                 >
                   {t('nav.protests')}
                 </a>
@@ -72,9 +75,9 @@ export default function Footer() {
                   href="https://forms.gle/w7jEJtD2HSrgDNcw5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors flex items-center"
+                  className="text-paper/70 hover:text-white transition-colors flex items-center"
                 >
-                  📝 {t('nav.report')}
+                  {t('nav.report')}
                 </a>
               </li>
               <li>
@@ -82,7 +85,7 @@ export default function Footer() {
                   href="https://github.com/najus/jhappad"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors flex items-center"
+                  className="text-paper/70 hover:text-white transition-colors flex items-center"
                 >
                   <Github className="w-4 h-4 mr-2" />
                   {t('nav.github')}
@@ -93,8 +96,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-paper/20 mt-8 pt-8 text-center">
+          <p className="text-paper/50 text-sm">
             {t('footer.copyright')}
           </p>
         </div>

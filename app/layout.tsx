@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Fraunces } from 'next/font/google'
 import './globals.css'
 import { Analytics } from "@vercel/analytics/next"
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-display', weight: ['600', '700', '900'] })
 
 export const metadata: Metadata = {
   title: 'Jhappad.com - A Slap to Corruption in Nepal',
@@ -60,9 +61,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${fraunces.variable} font-sans`}>
         <LanguageProvider>
-          <div className="min-h-screen bg-gray-50 flex flex-col">
+          <div className="min-h-screen bg-paper text-ink flex flex-col">
             <div className="flex-1">
               {children}
             </div>

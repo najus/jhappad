@@ -29,7 +29,7 @@ export default function ChildCard({ child }: ChildCardProps) {
   }
 
   return (
-    <div className="bg-gray-50 rounded-lg p-3 sm:p-4">
+    <div className="bg-sheet border border-hairline rounded-sm p-3 sm:p-4">
       {/* Child Header */}
       <div className="flex items-start space-x-2 sm:space-x-3 mb-3">
         {child.photo && (

@@ -48,7 +48,7 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
     <>
       {/* Clickable Card */}
       <div 
-        className="card hover:shadow-xl transition-all duration-300 p-4 sm:p-6 cursor-pointer group hover:scale-105"
+        className="card cursor-pointer group hover:border-nepal-red/60 transition-colors"
         onClick={() => setIsModalOpen(true)}
       >
         {/* Politician Header */}
@@ -57,17 +57,17 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
             <img
               src={politician.photo}
               alt={politician.name}
-              className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0 group-hover:ring-4 group-hover:ring-nepal-red/20 transition-all duration-300"
+              className="w-12 h-12 sm:w-16 sm:h-16 rounded-sm object-cover flex-shrink-0 border border-hairline"
             />
           )}
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 break-words group-hover:text-nepal-red transition-colors">
+            <h3 className="font-display text-lg sm:text-xl font-bold text-ink mb-1 break-words group-hover:text-nepal-red transition-colors">
               {politician.name}
             </h3>
             <p className="text-nepal-red font-semibold mb-1 text-sm sm:text-base break-words">
               {politician.position}
             </p>
-            <p className="text-gray-600 text-xs sm:text-sm break-words">
+            <p className="text-ink/60 text-xs sm:text-sm break-words">
               {politician.party}
             </p>
           </div>
@@ -75,12 +75,12 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-          <div className="flex items-center text-xs sm:text-sm text-gray-600">
+          <div className="flex items-center text-xs sm:text-sm text-ink/60">
             <Users className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" />
             <span className="truncate">{politician.children.length} {t('politician.children')}</span>
           </div>
           {politician.estimatedWealth && (
-            <div className="flex items-center text-xs sm:text-sm text-gray-600">
+            <div className="flex items-center text-xs sm:text-sm text-ink/60">
               <DollarSign className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0" />
               <span className="truncate">{politician.estimatedWealth}</span>
             </div>
@@ -90,10 +90,10 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
         {/* Corruption Allegations Preview */}
         {politician.corruptionAllegations && politician.corruptionAllegations.length > 0 && (
           <div className="mb-3 sm:mb-4">
-            <h4 className="text-xs sm:text-sm font-semibold text-red-600 mb-2">{t('politician.allegations')}</h4>
+            <h4 className="text-xs sm:text-sm font-semibold text-nepal-red mb-2 uppercase tracking-wide">{t('politician.allegations')}</h4>
             <div className="space-y-1">
               {politician.corruptionAllegations.slice(0, 1).map((allegation, index) => (
-                <p key={index} className="text-xs sm:text-sm text-gray-700 bg-red-50 p-2 rounded break-words line-clamp-2">
+                <p key={index} className="text-xs sm:text-sm text-ink/80 bg-sheet border-l-2 border-nepal-red p-2 break-words line-clamp-2">
                   {allegation}
                 </p>
               ))}
@@ -108,8 +108,8 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
 
         {/* Documented Cases (Jawafdehi) Preview */}
         {politician.jawafdehi && politician.jawafdehi.caseCount > 0 && (
-          <div className="flex items-center text-xs sm:text-sm text-gray-700 bg-amber-50 border border-amber-200 p-2 rounded">
-            <Scale className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0 text-amber-700" />
+          <div className="flex items-center text-xs sm:text-sm text-ink bg-sheet border-l-2 border-nepal-blue p-2">
+            <Scale className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0 text-nepal-blue" />
             <span className="truncate">
               {politician.jawafdehi.caseCount} documented court/CIAA case{politician.jawafdehi.caseCount > 1 ? 's' : ''}
               {formatBigo(politician.jawafdehi.totalBigoNpr) && <> · बिगो {formatBigo(politician.jawafdehi.totalBigoNpr)}</>}
@@ -129,29 +129,29 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
             }
           }}
         >
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+          <div className="bg-paper rounded-sm border border-ink max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
-            <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
+            <div className="sticky top-0 bg-paper border-b border-ink p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   {politician.photo && (
                     <img
                       src={politician.photo}
                       alt={politician.name}
-                      className="w-16 h-16 rounded-full object-cover"
+                      className="w-16 h-16 rounded-sm object-cover border border-hairline"
                     />
                   )}
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900">{politician.name}</h2>
+                    <h2 className="font-display text-2xl font-bold text-ink">{politician.name}</h2>
                     <p className="text-nepal-red font-semibold text-lg">{politician.position}</p>
                     <p className="text-gray-600">{politician.party}</p>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  className="p-2 hover:bg-sheet rounded-sm transition-colors"
                 >
-                  <X className="w-6 h-6 text-gray-500" />
+                  <X className="w-6 h-6 text-ink/60" />
                 </button>
               </div>
             </div>
@@ -160,36 +160,36 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
             <div className="p-6 space-y-6">
               {/* Stats */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-nepal-red/10 rounded-xl p-4 text-center">
+                <div className="bg-sheet border-t-2 border-ink p-4 text-center">
                   <Users className="w-8 h-8 text-nepal-red mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">{politician.children.length}</div>
-                  <div className="text-sm text-gray-600">{t('politician.children')}</div>
+                  <div className="font-display text-2xl font-bold text-ink">{politician.children.length}</div>
+                  <div className="text-sm text-ink/60">{t('politician.children')}</div>
                 </div>
                 {politician.estimatedWealth && (
-                  <div className="bg-green-100 rounded-xl p-4 text-center">
-                    <DollarSign className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-gray-900">{politician.estimatedWealth}</div>
-                    <div className="text-sm text-gray-600">{t('politician.estimatedWealth')}</div>
+                  <div className="bg-sheet border-t-2 border-ink p-4 text-center">
+                    <DollarSign className="w-8 h-8 text-nepal-blue mx-auto mb-2" />
+                    <div className="font-display text-2xl font-bold text-ink">{politician.estimatedWealth}</div>
+                    <div className="text-sm text-ink/60">{t('politician.estimatedWealth')}</div>
                   </div>
                 )}
-                <div className="bg-amber-100 rounded-xl p-4 text-center">
-                  <Calendar className="w-8 h-8 text-amber-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">{new Date(politician.lastUpdated).toLocaleDateString()}</div>
-                  <div className="text-sm text-gray-600">{t('politician.lastUpdated')}</div>
+                <div className="bg-sheet border-t-2 border-ink p-4 text-center">
+                  <Calendar className="w-8 h-8 text-nepal-blue mx-auto mb-2" />
+                  <div className="font-display text-2xl font-bold text-ink">{new Date(politician.lastUpdated).toLocaleDateString()}</div>
+                  <div className="text-sm text-ink/60">{t('politician.lastUpdated')}</div>
                 </div>
               </div>
 
               {/* Corruption Allegations */}
               {politician.corruptionAllegations && politician.corruptionAllegations.length > 0 && (
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <h3 className="font-display text-xl font-bold text-ink mb-4 flex items-center border-b border-hairline pb-2">
                     <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
                     {t('politician.corruptionAllegations')} ({politician.corruptionAllegations.length})
                   </h3>
                   <div className="space-y-3">
                     {politician.corruptionAllegations.map((allegation, index) => (
-                      <div key={index} className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
-                        <p className="text-gray-800">{allegation}</p>
+                      <div key={index} className="bg-white border-l-2 border-nepal-red p-4">
+                        <p className="text-ink/85">{allegation}</p>
                       </div>
                     ))}
                   </div>
@@ -199,43 +199,43 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
               {/* Documented Cases (Jawafdehi) */}
               {politician.jawafdehi && politician.jawafdehi.caseCount > 0 && (
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                    <Scale className="w-6 h-6 mr-3 text-amber-700" />
+                  <h3 className="font-display text-xl font-bold text-ink mb-4 flex items-center border-b border-hairline pb-2">
+                    <Scale className="w-6 h-6 mr-3 text-nepal-blue" />
                     Documented Court / CIAA Cases ({politician.jawafdehi.caseCount})
                   </h3>
                   <div className="space-y-4">
                     {politician.jawafdehi.cases.map((c) => (
-                      <div key={c.slug} className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
-                        <a href={c.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-gray-900 hover:text-nepal-red break-words">
+                      <div key={c.slug} className="bg-white border-l-2 border-nepal-blue p-4">
+                        <a href={c.url} target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-ink hover:text-nepal-blue break-words">
                           {c.title}
                         </a>
                         <div className="flex flex-wrap gap-2 mt-2 text-xs">
-                          {c.status && <span className="bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full font-medium">{c.status}</span>}
-                          {c.bigoFormatted && <span className="bg-white border border-amber-300 px-2 py-0.5 rounded-full">बिगो {c.bigoFormatted}</span>}
-                          {c.role && <span className="bg-white border border-amber-300 px-2 py-0.5 rounded-full">Role: {c.role}{c.outcome ? ` / ${c.outcome}` : ''}</span>}
+                          {c.status && <span className="border border-nepal-blue text-nepal-blue px-2 py-0.5 font-medium uppercase tracking-wide">{c.status}</span>}
+                          {c.bigoFormatted && <span className="bg-sheet border border-hairline px-2 py-0.5">बिगो {c.bigoFormatted}</span>}
+                          {c.role && <span className="bg-sheet border border-hairline px-2 py-0.5">Role: {c.role}{c.outcome ? ` / ${c.outcome}` : ''}</span>}
                         </div>
                         {c.keyAllegations.length > 0 && (
-                          <ul className="list-disc list-inside text-sm text-gray-700 mt-2 space-y-1">
+                          <ul className="list-disc list-inside text-sm text-ink/75 mt-2 space-y-1">
                             {c.keyAllegations.slice(0, 3).map((a, i) => (
                               <li key={i} className="break-words">{a}</li>
                             ))}
                           </ul>
                         )}
                         {c.latestDevelopment && (
-                          <p className="text-xs text-gray-500 mt-2">
+                          <p className="text-xs text-ink/50 mt-2">
                             Latest: {c.latestDevelopment.title} ({c.latestDevelopment.date})
                           </p>
                         )}
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs text-gray-500 mt-3">{politician.jawafdehi.attribution}</p>
+                  <p className="text-xs text-ink/50 mt-3">{politician.jawafdehi.attribution}</p>
                 </div>
               )}
 
               {/* Children */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <h3 className="font-display text-xl font-bold text-ink mb-4 flex items-center border-b border-hairline pb-2">
                   <Users className="w-6 h-6 mr-3 text-nepal-red" />
                   {t('politician.familyMembers')} ({politician.children.length})
                 </h3>
@@ -249,8 +249,8 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
               {/* Sources */}
               {politician.sources && politician.sources.length > 0 && (
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                    <ExternalLink className="w-6 h-6 mr-3 text-blue-600" />
+                  <h3 className="font-display text-xl font-bold text-ink mb-4 flex items-center border-b border-hairline pb-2">
+                    <ExternalLink className="w-6 h-6 mr-3 text-nepal-blue" />
                     {t('politician.sources')} ({politician.sources.length})
                   </h3>
                   <div className="space-y-2">
@@ -260,10 +260,10 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
                         href={source}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
+                        className="flex items-center p-3 bg-sheet hover:bg-hairline/50 transition-colors"
                       >
-                        <ExternalLink className="w-4 h-4 mr-3 text-blue-600 flex-shrink-0" />
-                        <span className="text-blue-600 hover:text-blue-800 break-all">Source {index + 1}</span>
+                        <ExternalLink className="w-4 h-4 mr-3 text-nepal-blue flex-shrink-0" />
+                        <span className="text-nepal-blue hover:text-ink break-all">Source {index + 1}</span>
                       </a>
                     ))}
                   </div>
@@ -271,12 +271,12 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
               )}
 
               {/* Share Section */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+              <div className="bg-sheet p-6">
+                <h3 className="font-display text-xl font-bold text-ink mb-4 flex items-center border-b border-hairline pb-2">
                   <Share2 className="w-6 h-6 mr-3 text-nepal-red" />
                   {t('politician.shareInformation')}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-ink/70 mb-4">
                   {t('politician.shareDescription').replace('{name}', politician.name)}
                 </p>
                 <SocialShare 
