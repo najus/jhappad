@@ -1,7 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Users, DollarSign, Calendar, ExternalLink, ChevronDown, ChevronUp, Instagram, Facebook, X, Eye, Share2 } from 'lucide-react'
+import { Users, DollarSign, Calendar, ExternalLink, ChevronDown, ChevronUp, Instagram, Facebook, X, Eye, Share2, Scale } from 'lucide-react'
+
+function formatBigo(npr?: number | null): string | null {
+  if (!npr) return null
+  if (npr >= 1e9) return `Rs ${(npr / 1e9).toFixed(npr % 1e9 ? 2 : 0)} arba`
+  if (npr >= 1e7) return `Rs ${(npr / 1e7).toFixed(npr % 1e7 ? 2 : 0)} crore`
+  return `Rs ${npr.toLocaleString('en-IN')}`
+}
 import { Politician } from '@/types/politician'
 import ChildCard from './ChildCard'
 import SocialShare from './SocialShare'
@@ -99,6 +106,17 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
           </div>
         )}
 
+        {/* Documented Cases (Jawafdehi) Preview */}
+        {politician.jawafdehi && politician.jawafdehi.caseCount > 0 && (
+          <div className="flex items-center text-xs sm:text-sm text-gray-700 bg-amber-50 border border-amber-200 p-2 rounded">
+            <Scale className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 flex-shrink-0 text-amber-700" />
+            <span className="truncate">
+              {politician.jawafdehi.caseCount} documented court/CIAA case{politician.jawafdehi.caseCount > 1 ? 's' : ''}
+              {formatBigo(politician.jawafdehi.totalBigoNpr) && <> · बिगो {formatBigo(politician.jawafdehi.totalBigoNpr)}</>}
+            </span>
+          </div>
+        )}
+
       </div>
 
       {/* Modal */}
@@ -175,6 +193,43 @@ export default function PoliticianCard({ politician }: PoliticianCardProps) {
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Documented Cases (Jawafdehi) */}
+              {politician.jawafdehi && politician.jawafdehi.caseCount > 0 && (
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                    <Scale className="w-6 h-6 mr-3 text-amber-700" />
+                    Documented Court / CIAA Cases ({politician.jawafdehi.caseCount})
+                  </h3>
+                  <div className="space-y-4">
+                    {politician.jawafdehi.cases.map((c) => (
+                      <div key={c.slug} className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                        <a href={c.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-gray-900 hover:text-nepal-red break-words">
+                          {c.title}
+                        </a>
+                        <div className="flex flex-wrap gap-2 mt-2 text-xs">
+                          {c.status && <span className="bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full font-medium">{c.status}</span>}
+                          {c.bigoFormatted && <span className="bg-white border border-amber-300 px-2 py-0.5 rounded-full">बिगो {c.bigoFormatted}</span>}
+                          {c.role && <span className="bg-white border border-amber-300 px-2 py-0.5 rounded-full">Role: {c.role}{c.outcome ? ` / ${c.outcome}` : ''}</span>}
+                        </div>
+                        {c.keyAllegations.length > 0 && (
+                          <ul className="list-disc list-inside text-sm text-gray-700 mt-2 space-y-1">
+                            {c.keyAllegations.slice(0, 3).map((a, i) => (
+                              <li key={i} className="break-words">{a}</li>
+                            ))}
+                          </ul>
+                        )}
+                        {c.latestDevelopment && (
+                          <p className="text-xs text-gray-500 mt-2">
+                            Latest: {c.latestDevelopment.title} ({c.latestDevelopment.date})
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-gray-500 mt-3">{politician.jawafdehi.attribution}</p>
                 </div>
               )}
 

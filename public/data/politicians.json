@@ -192,7 +192,7 @@
         ]
       }
     ],
-    "lastUpdated": "2025-09-09",
+    "lastUpdated": "2026-11-16",
     "sources": [
       "https://reviewnepal.com/articles/amazing-property-details-of-ministers.html",
       "https://xnepali.net/gold-lover-nepali-ministers-how-rich-are-cabinet-ministers-of-kp-oli",
@@ -204,8 +204,75 @@
       "https://www.reuters.com/business/media-telecom/nepal-pm-oli-resigns-after-violent-anti-corruption-protests-his-aide-says-2025-09-09",
       "https://www.washingtonpost.com/world/2025/09/09/nepal-social-media-protests-prime-minister-resigns",
       "https://apnews.com/article/9dc6ecd2c089141cc8c36af5949cfc09",
-      "https://www.india.com/news/world/kp-sharma-oli-net-worth-nepals-former-pm-kp-sharma-oli-oli-owns-assets-gen-z-youth-protest-social-media-ban-8064885/"
-    ]
+      "https://www.india.com/news/world/kp-sharma-oli-net-worth-nepals-former-pm-kp-sharma-oli-oli-owns-assets-gen-z-youth-protest-social-media-ban-8064885/",
+      "https://jawafdehi.org/case/giribandhu-tea-estate-land-swap",
+      "https://jawafdehi.org/case/budhigandaki-hydropower-projec-77f597"
+    ],
+    "jawafdehi": {
+      "entityIri": "https://jawafdehi.org/entity/person/kp-sharma-oli",
+      "nameEn": "KP Sharma Oli",
+      "nameNe": "KP Sharma Oli",
+      "photoCredit": "KP Sharma Oli, Prime Minister's Office, via Wikimedia Commons, CC BY-SA 4.0. Cropped.",
+      "caseCount": 2,
+      "totalBigoNpr": 14000000000,
+      "cases": [
+        {
+          "slug": "giribandhu-tea-estate-land-swap",
+          "title": "Giribandhu Tea Estate Land Swap Scandal",
+          "url": "https://jawafdehi.org/case/giribandhu-tea-estate-land-swap",
+          "caseType": "CORRUPTION",
+          "status": "ongoing",
+          "bigoNpr": 5000000000,
+          "bigoFormatted": "Rs 5 arba (Rs 5,00,00,00,000)",
+          "role": "alleged",
+          "outcome": null,
+          "keyAllegations": [
+            "Illegal amendment of land concerning act to benefit a specific private company by introducing provisions that allowed industries holding land above the legal ceiling to exchange or sell such land, allegedly tailoring the law to benefit Giribandhu Tea Estate.",
+            "Council of Ministers' decision of 13 April 2021 (2078/01/13 B.S.) approving the land exchange constituted an abuse of power and amounted to policy-level corruption. Abuse of Cabinet authority by approving the exchange of approximately 343 bighas of high-value land in Birtamod, Jhapa, despite the land being held under a land-ceiling exemption solely for tea cultivation. The approval was alleged to be contrary to Section 12(c) of the Land Concerning Act.",
+            "Illegal attempts to bypass binding Supreme Court decisions via ordinances",
+            "Illegal attempt to swap legally protected agricultural land (tea production) for commercial real estate development."
+          ],
+          "latestDevelopment": {
+            "date": "2025-09-12",
+            "dateBs": "2082-05-27",
+            "title": "Citizen activist Sanjib Bhattarai files formal accusation against KP Oli and business Deepak Kumar Malhotra in CIAA and calls for a high-level probe"
+          },
+          "courtCases": [
+            "https://jawafdehi.org/courtcase/supreme/075-wo-0696",
+            "https://jawafdehi.org/courtcase/supreme/076-wc-0030",
+            "https://jawafdehi.org/courtcase/supreme/078-wc-0004",
+            "https://jawafdehi.org/courtcase/supreme/078-wc-0012",
+            "https://jawafdehi.org/courtcase/supreme/081-ap-0442"
+          ],
+          "caseUpdatedAt": "2026-11-16T09:49:24.497178+05:45"
+        },
+        {
+          "slug": "budhigandaki-hydropower-projec-77f597",
+          "title": "Budhigandaki Hydropower Project: Allegation of 9 Billion NPR Corruption",
+          "url": "https://jawafdehi.org/case/budhigandaki-hydropower-projec-77f597",
+          "caseType": "CORRUPTION",
+          "status": "others",
+          "bigoNpr": 9000000000,
+          "bigoFormatted": "Rs 9 arba (Rs 9,00,00,00,000)",
+          "role": "related",
+          "outcome": null,
+          "keyAllegations": [
+            "Direct award of the Budhi Gandaki Hydropower Project to China Gezhouba Group Corporation (CGGC) without an open and competitive bidding process.",
+            "Alleged irregularities in land acquisition and compensation payments, including unfair valuation, financial mismanagement, and procedural weaknesses.",
+            "Alleged payment of NPR 9 billion in commission during the contract award process, as claimed by former Prime Minister Baburam Bhattarai."
+          ],
+          "latestDevelopment": {
+            "date": "2022-10-15",
+            "dateBs": "2079-06-29",
+            "title": "Baburam Bhattarai retracts the allegation, saying it was based on \"unconfirmed information\""
+          },
+          "courtCases": [],
+          "caseUpdatedAt": "2026-11-16T09:49:24.473153+05:45"
+        }
+      ],
+      "attribution": "Case data: Jawafdehi Initiative (jawafdehi.org), CC BY-NC 4.0",
+      "syncedAt": "2026-11-23T19:02:28.017Z"
+    }
   },
   {
     "id": "politician-007",
@@ -318,5 +385,57 @@
       "https://en.wikipedia.org/wiki/Mahesh_Basnet_(born_1975)",
       "https://nepalnews.com/s/capital/mahesh-basnet-accuses-kulman-of-corruption-under-the-guise-of-populism"
     ]
+  },
+  {
+    "id": "politician-draft-bishnu-prasad-paudel",
+    "name": "Bishnu Prasad Paudel",
+    "position": "Former Minister of Finance",
+    "party": "CPN-UML",
+    "photo": "https://s3.jawafdehi.org/entities/bishnu-prasad-paudel-portrait.jpg",
+    "corruptionAllegations": [],
+    "children": [],
+    "lastUpdated": "2026-11-19",
+    "sources": [
+      "https://jawafdehi.org/case/bishnu-prasad-paudel-money-laundering-082-cr-0179"
+    ],
+    "jawafdehi": {
+      "entityIri": "https://jawafdehi.org/entity/person/bishnu-prasad-paudel",
+      "nameEn": "Bishnu Prasad Paudel",
+      "nameNe": "विष्णुप्रसाद पौडेल",
+      "photoCredit": null,
+      "caseCount": 1,
+      "totalBigoNpr": 209000000,
+      "cases": [
+        {
+          "slug": "bishnu-prasad-paudel-money-laundering-082-cr-0179",
+          "title": "विष्णुप्रसाद पौडेल समेतविरुद्ध सम्पत्ति शुद्धीकरण पूरक मुद्दा: श्रीराम टोबाको सेयर हस्तान्तरण, विशेष अदालत (082-CR-0179)",
+          "url": "https://jawafdehi.org/case/bishnu-prasad-paudel-money-laundering-082-cr-0179",
+          "caseType": "MONEY_LAUNDERING",
+          "status": "ongoing",
+          "bigoNpr": 209000000,
+          "bigoFormatted": "Rs 20.90 crore (Rs 20,90,00,000)",
+          "role": "accused",
+          "outcome": "charged",
+          "keyAllegations": [
+            "पौडेलले अर्थमन्त्री रहँदा पद र प्रभावको दुरुपयोग गरी श्रीराम टोबाको इन्डस्ट्रिजको २० प्रतिशत सेयर (३,७५,००० कित्ता) प्रतिकित्ता रु. १०० मा दीपक भट्टको कम्पनीलाई हस्तान्तरण गराउन सहजीकरण गरेको अभियोगपत्रको दाबी (समाचारअनुसार; अदालतमा विचाराधीन)।",
+            "भट्ट समेतलाई गैरकानुनी सम्पत्ति लुकाउने र स्रोत छल्ने वातावरण बनाई सम्पत्ति शुद्धीकरण निवारण ऐन, २०६४ अन्तर्गत मतियारको भूमिका खेलेको आरोप।",
+            "पौडेलविरुद्ध रु. २० करोड ९० लाख बिगो र बैंक खातामा रहेको करिब रु. ६ लाख ३४ हजार जफतको मागदाबी (समाचारअनुसार)।",
+            "दीपक भट्टविरुद्ध पहिलेको मुद्दा 082-CR-0154 विचाराधीन रहँदै थप कसूर गरेको भन्दै थप रु. ४७ करोड ७७ लाख माग दाबी गरिएको (समाचारअनुसार)।"
+          ],
+          "latestDevelopment": {
+            "date": "2026-07-17",
+            "dateBs": "2083-04-01",
+            "title": "थुनछेक आदेश: पौडेल साधारण तारेखमा"
+          },
+          "courtCases": [
+            "https://jawafdehi.org/courtcase/special/082-cr-0179"
+          ],
+          "caseUpdatedAt": "2026-11-19T06:47:55.326658+05:45"
+        }
+      ],
+      "attribution": "Case data: Jawafdehi Initiative (jawafdehi.org), CC BY-NC 4.0",
+      "syncedAt": "2026-11-23T19:02:30.252Z"
+    },
+    "_draft": "Created by sync-jawafdehi-poc — position/party are manual placeholders, verify before publishing"
   }
 ]
